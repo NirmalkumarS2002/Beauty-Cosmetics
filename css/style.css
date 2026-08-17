@@ -8,6 +8,7 @@ html,
 body {
     overflow-x: hidden;
     scroll-behavior: smooth;
+            font-family: 'Poppins', sans-serif;
 }
 
 :root {
@@ -571,3 +572,84 @@ body {
         gap: 30px;
     }
 }
+
+/* common pages */
+
+  /* ===== 1. CONTACT HERO ===== */
+        .ctc-hero {
+            position: relative;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(36, 22, 22, .6), rgba(36, 22, 22, .6)),
+                url("https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=1800&auto=format&fit=crop") center/cover no-repeat;
+            padding: 100px 15px 60px 15px;
+            color: #fff;
+        }
+
+        .ctc-hero-inner h5 {
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--pcolor);
+            font-size: 13px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+
+        }
+
+        .ctc-hero-inner h5::before,
+        .ctc-hero-inner h5::after {
+            content: "";
+            width: 30px;
+            height: 1px;
+            background: var(--pcolor);
+        }
+
+        .ctc-hero-inner h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 56px;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .ctc-hero-inner h1 em {
+            font-style: italic;
+            color: var(--pcolor);
+        }
+
+        .ctc-hero-inner>p {
+            max-width: 480px;
+            margin: 20px auto;
+            color: rgba(255, 255, 255, .72);
+            font-size: 15.5px;
+            line-height: 1.8;
+        }
+
+        .ctc-hero-menus {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 13px;
+        }
+
+        .ctc-hero-menus a {
+            text-decoration: none;
+            color: white;
+            font-size: clamp(14px, 1.5vw, 16px);
+            transition: .3s ease;
+        }
+
+        .ctc-hero-menus a:hover {
+            color: var(--pcolor);
+        }
+
+        .ctc-hero-menus p {
+            font-size: clamp(13px, 1.4vw, 15px);
+            color: gray;
+        }

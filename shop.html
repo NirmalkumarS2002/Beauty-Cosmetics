@@ -13,6 +13,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
+        
+    <link rel="stylesheet" href="./css/style.css">
+
     <style>
         :root {
             --pcolor: #D17474;
@@ -94,44 +97,6 @@
             text-align: center;
             max-width: 560px;
             margin: 16px auto 0;
-        }
-
-        /* ===== 1. SHOP HERO / PAGE BANNER ===== */
-        .shop-hero {
-            position: relative;
-            min-height: 55vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #fff;
-            background: linear-gradient(rgba(20, 10, 10, .6), rgba(20, 10, 10, .6)),
-                url("https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1600&auto=format&fit=crop") center/cover no-repeat;
-        }
-
-        .shop-hero-inner h5 {
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-size: 13px;
-            color: var(--pcolor);
-            margin-bottom: 16px;
-        }
-
-        .shop-hero-inner h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 58px;
-            font-weight: 600;
-        }
-
-        .breadcrumb {
-            margin-top: 18px;
-            font-size: 13px;
-            letter-spacing: .5px;
-            color: rgba(255, 255, 255, .75);
-        }
-
-        .breadcrumb span {
-            color: var(--pcolor);
         }
 
         /* ===== 2. FILTER TOOLBAR + PRODUCT GRID ===== */
@@ -599,15 +564,158 @@
 </head>
 
 <body>
+   <div class="header">
 
-    <!-- 1. SHOP HERO / PAGE BANNER -->
-    <section class="shop-hero">
-        <div class="shop-hero-inner">
-            <h5>Discover</h5>
-            <h1>Shop All Products</h1>
-            <p class="breadcrumb">Home <span>/</span> Shop</p>
+        <div class="head-sidebar">
+
+            <div class="sidebar-top">
+                <div>
+                    <a href="index.html">
+                        <img src="./src/logo.webp" alt="company logo" class="sidelogo">
+                    </a>
+                    <span class="material-symbols-outlined close-btn">close</span>
+                </div>
+
+                <p>
+                    Discover premium beauty essentials crafted to enhance your
+                    natural glow and everyday self-care.
+                </p>
+            </div>
+
+
+            <div class="side-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About</a>
+                <a href="shop.html">Shop</a>
+                <a href="service.html">Service</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+
+            <div class="side-serivice-wrap">
+
+                <h2>What We Offer?</h2>
+
+                <div class="sidebar-services">
+
+                    <p>
+                        <span class="material-symbols-outlined">circle</span>
+                        Skincare Essentials
+                    </p>
+
+                    <p>
+                        <span class="material-symbols-outlined">circle</span>
+                        Makeup Collection
+                    </p>
+
+                    <p>
+                        <span class="material-symbols-outlined">circle</span>
+                        Hair Care Products
+                    </p>
+
+                    <p>
+                        <span class="material-symbols-outlined">circle</span>
+                        Fragrances & Perfumes
+                    </p>
+
+                    <p>
+                        <span class="material-symbols-outlined">circle</span>
+                        Body Care
+                    </p>
+
+                    <p>
+                        <span class="material-symbols-outlined">circle</span>
+                        Beauty Accessories
+                    </p>
+
+                    <p>
+                        <span class="material-symbols-outlined">circle</span>
+                        Personal Care
+                    </p>
+
+                </div>
+            </div>
+
+
+            <div class="sideimage">
+
+                <img src="./src/aside-banner.jpg" alt="beauty products">
+
+                <h1>
+                    Make<br>
+                    Beauty
+                </h1>
+
+            </div>
+
+
+            <div class="side-details-wrap">
+
+                <h2>Need Beauty Advice?</h2>
+
+                <div class="sidebar-details">
+
+                    <a href="404.html">
+                        <span class="material-symbols-outlined">location_on</span>
+                        Chennai, Tamil Nadu
+                    </a>
+
+                    <a href="404.html">
+                        <span class="material-symbols-outlined">mail</span>
+                        hello@beautycare.com
+                    </a>
+
+                    <a href="404.html">
+                        <span class="material-symbols-outlined">call</span>
+                        +91 98765 43210
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+        
+
+        <div class="head2">
+            <a href="index.html"><img src="./src/logo.webp" alt="" class="companylogo"></a>
+
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About</a>
+                <a href="shop.html">Shop</a>
+                <a href="service.html">Service</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div class="head-icons">
+                <a href="404.html" class="searchbtn"><span class="material-symbols-outlined search">Search</span></a>
+                <a href="login.html" class="tagicon"><span class="material-symbols-outlined log2">local_mall</span>
+                    <p class="itag">0</p>
+                </a>
+                <a href="login.html" class="tagicon"><span class="material-symbols-outlined log2">favorite</span>
+                    <p class="itag">0</p>
+                </a>
+                <a href="login.html" class="logintag"><span class="material-symbols-outlined log2">person</span></a>
+                <span class="material-symbols-outlined menu-btn">menu</span>
+            </div>
+
+
+        </div>
+    </div>
+
+        <section class="ctc-hero">
+        <div class="ctc-hero-inner">
+            <h5>Get In Touch</h5>
+            <h1>We'd Love To Hear <em>From You</em></h1>
+            <p>Questions about a treatment, an order or just want beauty advice,
+                our team replies within one business day.</p>
+
+            <div class="ctc-hero-menus">
+                <a href="index.html">Home</a> / <p>contact</p>
+            </div>
         </div>
     </section>
+
 
     <!-- 2. FILTER TOOLBAR + PRODUCT GRID -->
     <section class="shop-grid-section">
@@ -897,6 +1005,88 @@
             <p>Encrypted and safe payments</p>
         </div>
     </section>
+    
+    <footer class="footer">
+        <div class="footer1">
+
+            <div class="footermain1">
+                <h1>Quick Links</h1>
+                <div class="foot-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="shop.html">Shop</a>
+                    <a href="service.html">Service</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+
+            <div class="footermain1">
+                <h1>Shop</h1>
+                <div class="foot-links">
+                    <a href="404.html">Skin Products</a>
+                    <a href="404.html">Nail Products</a>
+                    <a href="404.html">Perfumes</a>
+                    <a href="404.html">hair care Products</a>
+                    <a href="404.html">Accessories</a>
+                </div>
+            </div>
+
+            <div class="footermain1">
+                <h1>Information</h1>
+                <div class="foot-links">
+                    <a href="404.html">Pagination</a>
+                    <a href="404.html">Terms & Conditions</a>
+                    <a href="404.html">Terms of use </a>
+                    <a href="404.html">Privacy Policy</a>
+                    <a href="404.html">Clothings</a>
+                </div>
+            </div>
+
+
+            <div class="footermain1">
+                <h1>Follow Us</h1>
+                <div class="foot-links foot-details">
+                    <a href="404.html"> <span class="material-symbols-outlined">call</span>+91 12343 67890</a>
+                    <a href="404.html"> <span class="material-symbols-outlined">call</span>+91 09876 12434</a>
+                    <a href="404.html"> <span class="material-symbols-outlined">mail</span>admin@gmail.com </a>
+                    <a href="404.html"> <span class="material-symbols-outlined">location_on</span>Chennai, Tamilnadu</a>
+                </div>
+
+                <div class="footer-social">
+                    <a href="404.html"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="404.html"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="404.html"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="foot-newsletters footermain1">
+
+                <h1>Newsletters</h1>
+
+                <p>Be the first who learns about our great promotions!</p>
+
+                <div class="foot-form">
+                    <input type="email" id="footemail" placeholder="Email">
+                    <button class="footbtn"><span class="material-symbols-outlined">
+                            arrow_right_alt
+                        </span></button>
+
+                </div>
+                <p class="ferror"></p>
+
+            </div>
+
+
+        </div>
+
+        <div class="footer2">
+            <a href=""><img src="./src/logo.webp" alt="" class="companylogo"></a>
+            <p>@ Copyright 2026 | Beauty Cosmetics </p>
+        </div>
+    </footer>
+
+    <script src="./js/script.js"></script>
 
 </body>
 
