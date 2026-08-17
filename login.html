@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blush & Bloom - Login</title>
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,-50..200" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            overflow-x: hidden;
+        }
+
+        :root {
+            --pcolor: #D17474;
+            --hcolor: #E7A9A9;
+            --scolor: #FFFFFF;
+            --dark: black;
+        }
+
+        body {
+            scroll-behavior: smooth;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+
+            background: linear-gradient(125deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.75)), url("https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=1600&auto=format&fit=crop") center/cover no-repeat;
+            backdrop-filter: blur(10px);
+        }
+
+        .login-page {
+            max-width: 1400px;
+            width: 100%;
+            background: #0f0f0f;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding: 30px;
+            gap: 30px;
+            border-radius: 4px;
+            border: 1px solid #232323;
+            box-shadow: 0px 0px 30px black;
+        }
+
+        .left-page {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .log-a img {
+            width: 200px;
+        }
+
+        .log-head {
+            text-align: center;
+        }
+
+        .log-head h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            font-size: 42px;
+            margin: 10px;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .log-head p {
+            font-size: 14px;
+            color: #999;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+
+        .role-btns {
+            margin-bottom: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            padding: 5px;
+            border-radius: 0px;
+            border: 1px solid var(--pcolor);
+        }
+
+        .role-btn {
+            padding: 10px 20px;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            border: none;
+            background: transparent;
+            color: white;
+            border-radius: 0px;
+            cursor: pointer;
+            transition: .5s ease;
+        }
+
+        .role-btn:hover {
+            background: var(--pcolor);
+        }
+
+        .role-btn.active {
+            background: var(--pcolor);
+        }
+
+        .inputbox {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .inputbox input {
+            padding: 15px 40px;
+            width: 100%;
+            border: 1px solid #333;
+            background: transparent;
+            color: white;
+            border-radius: 0px;
+            font-size: 14px;
+        }
+
+        .inputbox input:focus {
+            outline: none;
+            border-color: var(--pcolor);
+            box-shadow: 0px 0px 20px #d174748e;
+        }
+
+        .inputbox input:hover {
+            border-color: var(--pcolor);
+        }
+
+        .f-icon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 10px;
+            font-size: 20px;
+            color: var(--pcolor);
+        }
+
+        .passeye {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 10px;
+            font-size: 20px;
+            color: var(--pcolor);
+            cursor: pointer;
+        }
+
+        .errormsg {
+            color: var(--pcolor);
+            margin-bottom: 10px;
+            font-size: 12px;
+        }
+
+        .forget {
+            font-size: 14px;
+            text-align: right;
+            text-decoration: none;
+            margin-bottom: 20px;
+            color: #999;
+            transition: .5s ease;
+        }
+
+        .forget:hover {
+            color: var(--pcolor);
+        }
+
+        .log-btn {
+            padding: 15px 30px;
+            background: var(--pcolor);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            color: white;
+            border: 1px solid var(--pcolor);
+            border-radius: 0px;
+            cursor: pointer;
+            transition: .5s ease;
+
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            justify-content: center;
+        }
+
+        .log-btn span {
+            font-size: 20px;
+            transition: .5s ease;
+        }
+
+        .log-btn:hover span {
+            transform: translateX(5px);
+        }
+
+        .log-btn:hover {
+            background: transparent;
+            color: var(--pcolor);
+        }
+
+        .log-foot {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .log-foot>p {
+            font-size: 14px;
+            display: flex;
+            gap: 10px;
+            color: #999;
+        }
+
+        .log-foot p a {
+            text-decoration: none;
+            margin-bottom: 10px;
+            color: var(--scolor);
+            transition: .5s ease;
+        }
+
+        .log-foot p a:hover {
+            color: var(--pcolor);
+        }
+
+        .or {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 24px 0;
+
+
+        }
+
+        .or::before,
+        .or::after {
+            content: "";
+            height: 1px;
+            width: 40px;
+            background: rgba(128, 128, 128, 0.445);
+        }
+
+
+        .or span {
+            color: #999;
+            font-size: 13px;
+            font-weight: 500;
+            white-space: nowrap;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+
+        .log-icons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .log-icons a {
+            height: 34px;
+            width: 70px;
+            background: transparent;
+            border: 1px solid #333;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: .5s ease;
+            border-radius: 0px;
+        }
+
+        .log-icons a:hover {
+            background: var(--pcolor);
+            border-color: var(--pcolor);
+            color: white;
+        }
+
+        .home-btn {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            text-decoration: none;
+            gap: 6px;
+            color: #999;
+            transition: .5s ease;
+        }
+
+        .home-btn:hover {
+            color: var(--pcolor);
+        }
+
+        .home-btn span {
+            font-size: 20px;
+            color: var(--pcolor);
+        }
+
+
+        /*right page*/
+
+        .right-page {
+            background: linear-gradient(125deg, rgba(209, 116, 116, 0.25), rgba(0, 0, 0, 0.55)), url("https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?q=80&w=1200&auto=format&fit=crop");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 2px;
+            border: 1px solid #232323;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            padding: 20px;
+        }
+
+        .right-page h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            font-style: italic;
+            font-size: 64px;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .right-page p {
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+            line-height: 1.6;
+            font-size: 14px;
+            color: #eee;
+        }
+
+        @media (max-width:1050px) {
+            .right-page h1 {
+                font-size: 46px;
+            }
+
+            .log-a img {
+                width: 160px;
+            }
+
+            .right-page p {
+                font-size: 13px;
+            }
+        }
+
+        @media (max-width:850px) {
+            .login-page {
+                grid-template-columns: 1fr;
+                padding: 25px;
+            }
+
+            body {
+                padding: 15px;
+            }
+
+            .left-page {
+                order: 2;
+                padding: 0px;
+                padding-block: 30px;
+            }
+
+            .right-page {
+                min-height: 500px;
+                order: 1;
+            }
+        }
+
+        @media (max-width:600px) {
+
+            .login-page {
+                padding: 16px;
+            }
+
+            .right-page {
+                min-height: 300px;
+            }
+
+            .form {
+                width: 100%;
+            }
+
+            .right-page h1 {
+                font-size: 30px;
+            }
+
+            .left-page {
+                padding: 10px;
+            }
+
+            .log-a img {
+                width: 150px;
+            }
+
+            .right-page p {
+                font-size: 13px;
+            }
+        }
+
+        .popup {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            padding: 20px;
+        }
+
+        .popup.active {
+            display: flex;
+        }
+
+        .popup-box {
+            width: 350px;
+            background: #141414;
+            color: #fff;
+            border-radius: 2px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid #232323;
+            border-top: 3px solid var(--pcolor);
+        }
+
+        .success {
+            font-size: clamp(40px,5vw,60px);
+            color: var(--pcolor);
+        }
+
+        .popup-box h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            font-size: clamp(23px,2.5vw,30px);
+            margin: 15px 0 10px;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+
+        .popup-box p {
+            color: #999;
+            margin-bottom: 25px;
+            font-size: 13px;
+        }
+
+        .popup-box button {
+            padding: 12px 35px;
+            border: 1px solid var(--pcolor);
+            background: var(--pcolor);
+            color: #fff;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            border-radius: 0px;
+            cursor: pointer;
+            transition: .5s ease;
+        }
+
+        .popup-box button:hover {
+            background: transparent;
+            color: var(--pcolor);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="popup" id="popup">
+
+        <div class="popup-box">
+
+            <span class="material-symbols-outlined success">
+                check_circle
+            </span>
+
+            <h2>Login Successful!</h2>
+
+            <p>Welcome back. Click OK to continue.</p>
+
+            <button id="okBtn">OK</button>
+
+        </div>
+
+    </div>
+    <section class="login-page">
+
+        <div class="left-page">
+
+            <div class="log-head">
+                <h1>Login Here</h1>
+                <p>Access your Blush & Bloom account securely.</p>
+            </div>
+
+            <div class="form">
+
+                <div class="role-btns">
+                    <button class="role-btn active btn1" data-role="Admin">Admin</button>
+                    <button class="role-btn btn2" data-role="Client">Client</button>
+                </div>
+
+                <div class="form-box">
+                    <div class="inputbox">
+                        <span class="material-symbols-outlined f-icon">mail</span>
+                        <input type="email" placeholder="Enter Your Email" id="log-email">
+                    </div>
+                    <p class="errormsg"></p>
+                </div>
+
+                <div class="form-box">
+                    <div class="inputbox">
+                        <span class="material-symbols-outlined f-icon">lock</span>
+                        <input type="password" placeholder="Enter Your Password" id="log-pass">
+                        <span class="material-symbols-outlined passeye">visibility_off</span>
+                    </div>
+                    <p class="errormsg"></p>
+                </div>
+
+                <a href="404.html" class="forget">Forgot Password?</a>
+
+                <button class="log-btn">Submit<span class="material-symbols-outlined">
+                        arrow_right_alt
+                    </span></button>
+
+            </div>
+
+            <div class="log-foot">
+
+                <p>Don't Have an Account? <a href="sign.html">Sign Up</a></p>
+
+                <div class="or">
+                    <span>Or Continue With</span>
+                </div>
+
+                <div class="log-icons">
+                    <a href="404.html"><i class="fa-brands fa-google"></i></a>
+                    <a href="404.html"><i class="fa-brands fa-apple"></i></a>
+                    <a href="404.html"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+
+                <a href="index.html" class="home-btn"> <span class="material-symbols-outlined">home</span>Back to
+                    Home</a>
+            </div>
+
+        </div>
+
+        <div class="right-page">
+            <div class="logo-conatiner">
+                <a href="" class="log-a"><img src="./src/logo.webp" alt="Blush & Bloom logo"></a>
+                <h1>Welcome Back</h1>
+                <p>Login to manage your bookings, track orders, and access your personalized beauty studio
+                    dashboard.</p>
+            </div>
+        </div>
+
+    </section>
+</body>
+
+<script>
+    const email = document.querySelector("#log-email");
+    const password = document.querySelector("#log-pass");
+    const loginBtn = document.querySelector(".log-btn");
+
+    const roleBtns = document.querySelectorAll(".role-btn");
+    const eyeIcon = document.querySelector(".passeye");
+    const errorMsgs = document.querySelectorAll(".errormsg");
+
+    const popup = document.querySelector("#popup");
+    const okBtn = document.querySelector("#okBtn");
+
+    let selectedRole = "Admin";
+
+    // Role Selection
+    roleBtns.forEach(btn => {
+
+        btn.addEventListener("click", () => {
+
+            roleBtns.forEach(item => item.classList.remove("active"));
+
+            btn.classList.add("active");
+
+            selectedRole = btn.dataset.role;
+
+        });
+
+    });
+
+    // Show / Hide Password
+    eyeIcon.addEventListener("click", () => {
+
+        if (password.type === "password") {
+
+            password.type = "text";
+            eyeIcon.textContent = "visibility";
+
+        }
+        else {
+
+            password.type = "password";
+            eyeIcon.textContent = "visibility_off";
+
+        }
+
+    });
+
+    // Login Validation
+    loginBtn.addEventListener("click", (e) => {
+
+        e.preventDefault();
+
+        errorMsgs.forEach(msg => msg.textContent = "");
+
+        let valid = true;
+
+        let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        // Email Validation
+        if (email.value.trim() === "") {
+
+            errorMsgs[0].textContent = "Email is required";
+            valid = false;
+
+        }
+        else if (!emailRegex.test(email.value.trim())) {
+
+            errorMsgs[0].textContent = "Enter a valid email";
+            valid = false;
+
+        }
+
+        // Password Validation
+        if (password.value.trim() === "") {
+
+            errorMsgs[1].textContent = "Password is required";
+            valid = false;
+
+        }
+        else if (password.value.length < 6) {
+
+            errorMsgs[1].textContent = "Minimum 6 characters required";
+            valid = false;
+
+        }
+
+        if (valid) {
+
+            // alert(`${selectedRole} Login Successful`);
+
+
+
+
+            popup.classList.add("active");
+
+            okBtn.addEventListener("click", () => {
+
+                localStorage.setItem("useremail", email.value);
+
+                if (selectedRole === "Admin") {
+
+                    window.location.href = "admin.html";
+
+                }
+                else {
+
+                    window.location.href = "client.html";
+
+                }
+
+            });
+
+        }
+
+    });
+
+
+
+
+
+</script>
+
+</html>

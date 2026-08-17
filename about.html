@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty & Cosmetics - About Sections</title>
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --pcolor: #D17474;
+            --pcolor-dark: #B85757;
+            --cream: #FBF3F0;
+            --ink: #241616;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--ink);
+            overflow-x: hidden;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        .eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--pcolor-dark);
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .eyebrow.center {
+            justify-content: center;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 30px;
+            height: 1px;
+            background: var(--pcolor);
+        }
+
+        .eyebrow.center::after {
+            content: "";
+            width: 30px;
+            height: 1px;
+            background: var(--pcolor);
+        }
+
+        .sec-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            font-size: 46px;
+            line-height: 1.2;
+        }
+
+        .sec-title.center {
+            text-align: center;
+        }
+
+        .sec-title span {
+            font-style: italic;
+            color: var(--pcolor);
+        }
+
+        .sec-sub {
+            color: #6b5c5c;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .sec-sub.center {
+            text-align: center;
+            max-width: 560px;
+            margin: 16px auto 0;
+        }
+
+        /* ===== 1. ABOUT INTRO HERO ===== */
+        .about-hero {
+            padding: 130px 8vw 100px;
+            background: #fff;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-hero-img {
+            position: relative;
+        }
+
+        .about-hero-img img.main-img {
+            width: 100%;
+            aspect-ratio: 4/5;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .about-hero-img .float-card {
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            background: var(--pcolor);
+            color: #fff;
+            padding: 26px 30px;
+            border-radius: 16px;
+            max-width: 220px;
+        }
+
+        .float-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 34px;
+            font-weight: 600;
+        }
+
+        .float-card p {
+            font-size: 12px;
+            letter-spacing: .5px;
+            margin-top: 4px;
+            color: rgba(255, 255, 255, .85);
+        }
+
+        .about-hero-text h5.eyebrow {
+            margin-bottom: 16px;
+        }
+
+        .about-hero-text h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 48px;
+            font-weight: 600;
+            line-height: 1.25;
+            margin-bottom: 20px;
+        }
+
+        .about-hero-text h1 em {
+            font-style: italic;
+            color: var(--pcolor);
+        }
+
+        .about-hero-text p {
+            color: #6b5c5c;
+            font-size: 15px;
+            line-height: 1.9;
+            margin-bottom: 16px;
+            max-width: 480px;
+        }
+
+        /* ===== 2. OUR STORY / TIMELINE ===== */
+        .story {
+            padding: 110px 8vw;
+            background: var(--cream);
+        }
+
+        .story-grid {
+            margin-top: 60px;
+            display: grid;
+            grid-template-columns: .9fr 1.1fr;
+            gap: 70px;
+            align-items: start;
+        }
+
+        .story-img {
+            position: sticky;
+            top: 40px;
+        }
+
+        .story-img img {
+            width: 100%;
+            border-radius: 18px;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+        }
+
+        .timeline {
+            border-left: 1px solid #e6c9c9;
+            padding-left: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 46px;
+        }
+
+        .timeline-item {
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -45px;
+            top: 4px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--pcolor);
+        }
+
+        .timeline-item h5 {
+            color: var(--pcolor-dark);
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .timeline-item h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .timeline-item p {
+            font-size: 14px;
+            color: #6b5c5c;
+            line-height: 1.8;
+            max-width: 460px;
+        }
+
+        /* ===== 3. MISSION & VALUES ===== */
+        .values {
+            padding: 110px 8vw;
+            background: #fff;
+        }
+
+        .values-grid {
+            margin-top: 60px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .value-card {
+            padding: 44px 32px;
+            border-radius: 18px;
+            background: var(--cream);
+            transition: transform .3s ease, background .3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-8px);
+            background: var(--pcolor);
+        }
+
+        .value-card:hover h4,
+        .value-card:hover p,
+        .value-card:hover .value-icon span {
+            color: #fff;
+        }
+
+        .value-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .value-icon span {
+            font-size: 28px;
+            color: var(--pcolor-dark);
+        }
+
+        .value-card h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            margin-bottom: 12px;
+            transition: color .3s ease;
+        }
+
+        .value-card p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #6b5c5c;
+            transition: color .3s ease;
+        }
+
+        /* ===== 4. MEET THE TEAM ===== */
+        .team {
+            padding: 110px 8vw;
+            background: var(--cream);
+        }
+
+        .team-grid {
+            margin-top: 60px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 26px;
+        }
+
+        .team-card {
+            text-align: center;
+        }
+
+        .team-img-wrap {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 3/4;
+            margin-bottom: 18px;
+        }
+
+        .team-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .5s ease;
+        }
+
+        .team-card:hover .team-img-wrap img {
+            transform: scale(1.06);
+        }
+
+        .team-social {
+            position: absolute;
+            bottom: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            opacity: 0;
+            transition: opacity .3s ease;
+        }
+
+        .team-card:hover .team-social {
+            opacity: 1;
+        }
+
+        .team-social a {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--pcolor-dark);
+            font-size: 14px;
+        }
+
+        .team-card h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 21px;
+            font-weight: 600;
+        }
+
+        .team-card p {
+            font-size: 12.5px;
+            color: var(--pcolor-dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+        /* ===== 5. MILESTONES / STATS ===== */
+        .milestones {
+            position: relative;
+            padding: 130px 8vw;
+            background: linear-gradient(rgba(20, 10, 10, .68), rgba(20, 10, 10, .68)),
+                url("https://images.unsplash.com/photo-1519415943484-9fa1873496d4?q=80&w=1600&auto=format&fit=crop") center/cover fixed;
+            color: #fff;
+            text-align: center;
+        }
+
+        .milestones h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            font-weight: 500;
+            max-width: 680px;
+            margin: 0 auto 60px;
+            line-height: 1.4;
+        }
+
+        .milestones h2 em {
+            font-style: italic;
+            color: var(--pcolor);
+        }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .stat h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 48px;
+            font-weight: 600;
+            color: var(--pcolor);
+        }
+
+        .stat p {
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, .75);
+            margin-top: 8px;
+        }
+
+        /* ===== 6. CTA BANNER ===== */
+        .about-cta {
+            padding: 100px 8vw;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .about-cta-text h5 {
+            color: var(--pcolor-dark);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 12px;
+            margin-bottom: 14px;
+        }
+
+        .about-cta-text h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 38px;
+            font-weight: 600;
+            max-width: 500px;
+            line-height: 1.3;
+        }
+
+        .about-cta-text h2 em {
+            font-style: italic;
+            color: var(--pcolor);
+        }
+
+        .about-cta-btn {
+            padding: 18px 44px;
+            background: var(--pcolor);
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: .3s ease;
+            flex-shrink: 0;
+        }
+
+        .about-cta-btn:hover {
+            background: var(--ink);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width:1024px) {
+
+            .about-hero,
+            .story-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .story-img {
+                position: static;
+            }
+
+            .values-grid,
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stats-row {
+                grid-template-columns: repeat(2, 1fr);
+                row-gap: 40px;
+            }
+
+            .sec-title {
+                font-size: 36px;
+            }
+
+            .about-hero-text h1 {
+                font-size: 38px;
+            }
+        }
+
+        @media (max-width:640px) {
+
+            .values-grid,
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-hero,
+            .story,
+            .values,
+            .team,
+            .about-cta {
+                padding: 70px 6vw;
+            }
+
+            .about-hero-img .float-card {
+                right: 0;
+            }
+
+            .about-cta {
+                text-align: center;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 1. ABOUT INTRO HERO -->
+    <section class="about-hero">
+        <div class="about-hero-img">
+            <img class="main-img"
+                src="https://images.unsplash.com/photo-1512207736890-6ffed4b0c94f?q=80&w=900&auto=format&fit=crop"
+                alt="Beauty studio skincare arrangement">
+            <div class="float-card">
+                <h3>08+</h3>
+                <p>Years Crafting Clean Beauty</p>
+            </div>
+        </div>
+        <div class="about-hero-text">
+            <h5 class="eyebrow">About Us</h5>
+            <h1>We Believe Beauty <br>Starts With <em>Care</em></h1>
+            <p>Beauty Cosmetics began as a small studio with one goal: to make premium
+                skincare and makeup that people could trust, without the noise of a
+                thousand ingredients they couldn't pronounce.</p>
+            <p>Today we work with dermatologists and formulators across the world to
+                bring that same promise to every jar, tube and bottle we ship.</p>
+        </div>
+    </section>
+
+    <!-- 2. OUR STORY / TIMELINE -->
+    <section class="story">
+        <div class="eyebrow center" style="justify-content:center;">Our Journey</div>
+        <h2 class="sec-title center">The Story So <span>Far</span></h2>
+        <p class="sec-sub center">From a single skincare formula to a full beauty house,
+            here is how we got here.</p>
+
+        <div class="story-grid">
+            <div class="story-img">
+                <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=800&auto=format&fit=crop"
+                    alt="Founding team workspace with beauty products">
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h5>2018</h5>
+                    <h4>A Small Studio Begins</h4>
+                    <p>Two formulators started mixing skincare in a rented studio,
+                        selling their first serum to friends and neighbours.</p>
+                </div>
+                <div class="timeline-item">
+                    <h5>2020</h5>
+                    <h4>Our First Collection</h4>
+                    <p>The Radiance skincare line launched, selling out within
+                        three weeks of release.</p>
+                </div>
+                <div class="timeline-item">
+                    <h5>2022</h5>
+                    <h4>Makeup Enters The Studio</h4>
+                    <p>We introduced a full makeup range, formulated to be as
+                        gentle as our skincare.</p>
+                </div>
+                <div class="timeline-item">
+                    <h5>2026</h5>
+                    <h4>A Beauty House Today</h4>
+                    <p>Now shipping across the country, with a growing family
+                        of skincare, makeup, hair and fragrance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. MISSION & VALUES -->
+    <section class="values">
+        <div class="eyebrow center" style="justify-content:center;">What Drives Us</div>
+        <h2 class="sec-title center">Our <span>Values</span></h2>
+        <p class="sec-sub center">The principles behind every product we make and every
+            order we send out.</p>
+
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon"><span class="material-symbols-outlined">eco</span></div>
+                <h4>Honest Formulas</h4>
+                <p>No hidden ingredients, no unnecessary chemicals, just formulas
+                    we would use ourselves.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon"><span class="material-symbols-outlined">volunteer_activism</span></div>
+                <h4>Cruelty Free</h4>
+                <p>Every product is developed and tested without harming a
+                    single animal, ever.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon"><span class="material-symbols-outlined">diversity_3</span></div>
+                <h4>Made For Everyone</h4>
+                <p>Shades, textures and formulas built for every skin tone
+                    and skin type.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. MEET THE TEAM -->
+    <section class="team">
+        <div class="eyebrow center" style="justify-content:center;">The People</div>
+        <h2 class="sec-title center">Meet The <span>Team</span></h2>
+        <p class="sec-sub center">The formulators, stylists and dreamers behind every
+            product on our shelves.</p>
+
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=500&auto=format&fit=crop"
+                        alt="Founder portrait">
+                    <div class="team-social">
+                        <a href=""><i class="material-symbols-outlined" style="font-size:15px;">mail</i></a>
+                        <a href=""><i class="material-symbols-outlined" style="font-size:15px;">link</i></a>
+                    </div>
+                </div>
+                <h4>Meera Nair</h4>
+                <p>Founder & Creative Head</p>
+            </div>
+            <div class="team-card">
+                <div class="team-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=500&auto=format&fit=crop"
+                        alt="Head chemist portrait">
+                    <div class="team-social">
+                        <a href=""><i class="material-symbols-outlined" style="font-size:15px;">mail</i></a>
+                        <a href=""><i class="material-symbols-outlined" style="font-size:15px;">link</i></a>
+                    </div>
+                </div>
+                <h4>Arjun Iyer</h4>
+                <p>Head Formulation Chemist</p>
+            </div>
+            <div class="team-card">
+                <div class="team-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=500&auto=format&fit=crop"
+                        alt="Makeup artist portrait">
+                    <div class="team-social">
+                        <a href=""><i class="material-symbols-outlined" style="font-size:15px;">mail</i></a>
+                        <a href=""><i class="material-symbols-outlined" style="font-size:15px;">link</i></a>
+                    </div>
+                </div>
+                <h4>Divya Suresh</h4>
+                <p>Lead Makeup Artist</p>
+            </div>
+            <div class="team-card">
+                <div class="team-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=500&auto=format&fit=crop"
+                        alt="Brand strategist portrait">
+                    <div class="team-social">
+                        <a href=""><i class="material-symbols-outlined" style="font-size:15px;">mail</i></a>
+                        <a href=""><i class="material-symbols-outlined" style="font-size:15px;">link</i></a>
+                    </div>
+                </div>
+                <h4>Karthik Raja</h4>
+                <p>Brand Strategist</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. MILESTONES / STATS -->
+    <section class="milestones">
+        <h2>Small studio beginnings, grown into a beauty house trusted
+            by thousands of <em>happy customers</em></h2>
+        <div class="stats-row">
+            <div class="stat">
+                <h3>08+</h3>
+                <p>Years of Craft</p>
+            </div>
+            <div class="stat">
+                <h3>150+</h3>
+                <p>Products Made</p>
+            </div>
+            <div class="stat">
+                <h3>40K+</h3>
+                <p>Happy Customers</p>
+            </div>
+            <div class="stat">
+                <h3>100%</h3>
+                <p>Cruelty Free</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. CTA BANNER -->
+    <section class="about-cta">
+        <div class="about-cta-text">
+            <h5>Come Say Hello</h5>
+            <h2>Have a question, or just want to <em>talk beauty?</em></h2>
+        </div>
+        <button class="about-cta-btn">Contact Us</button>
+    </section>
+
+</body>
+
+</html>

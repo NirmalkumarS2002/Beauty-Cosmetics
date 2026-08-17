@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blush & Bloom - Admin Dashboard</title>
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,-50..200" />
+ <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --pcolor: #D17474;
+            --hcolor: #E7A9A9;
+            --dark: black;
+            --panel: #0c0c0c;
+            --card: #141414;
+        }
+
+        body {
+            background: rgb(15, 15, 15);
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            gap: 0px;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* ================= SIDEBAR ================= */
+        .sidebar {
+            width: 260px;
+            flex-shrink: 0;
+            background: var(--dark);
+            padding: 25px 18px;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            position: sticky;
+
+        }
+
+        .sidebar-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 0 8px 25px;
+            border-bottom: 1px solid #262626;
+            margin-bottom: 25px;
+        }
+
+        .sidebar-logo img {
+            width: 160px;
+        }
+
+        .sidebar-logo .adminclose {
+            color: white;
+            display: none;
+        }
+
+        .nav-group-label {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #666;
+            padding: 0 10px;
+            margin-bottom: 12px;
+        }
+
+        .side-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .side-nav button {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid transparent;
+            background: transparent;
+            color: #999;
+            font-family: "Roboto Condensed", sans-serif;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            cursor: pointer;
+            text-align: left;
+            transition: .3s ease;
+        }
+
+        .side-nav button .material-symbols-outlined {
+            font-size: 20px;
+        }
+
+        .side-nav button:hover {
+            background: #1c1c1c;
+            color: #fff;
+        }
+
+        .side-nav button.active {
+            background: var(--pcolor);
+            color: #fff;
+        }
+
+        .sidebar-footer {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px;
+            background: #1c1c1c;
+            border-left: 3px solid var(--pcolor);
+        }
+
+        .sidebar-footer img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .sidebar-footer h4 {
+            color: #fff;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .sidebar-footer span {
+            color: #888;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ================= MAIN AREA ================= */
+        .main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            min-width: 0;
+        }
+
+        .topbar {
+            background: var(--dark);
+            padding: 18px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .topbarimgcontainer {
+            display: none;
+            align-items: center;
+            gap: 20px;
+
+        }
+
+        .topbarimgcontainer .topbarmenu {
+            font-size: 20px;
+            display: none;
+            color: white;
+        }
+
+        .topbarimgcontainer img {
+            width: 140px;
+            display: none;
+        }
+
+        .topbar h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            font-size: 22px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: white;
+        }
+
+        .topbar-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #0c0c0c;
+            border: 1px solid var(--pcolor);
+            padding: 10px 16px;
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            outline: none;
+            font-size: 13px;
+            width: 180px;
+            color: white;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .search-box input::placeholder {
+            color: #777;
+        }
+
+        .search-box>.material-symbols-outlined {
+            color: var(--pcolor);
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .topbar-right>.material-symbols-outlined {
+            color: white;
+            cursor: pointer;
+        }
+
+        .topbar-avatar img {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid var(--pcolor);
+        }
+
+        .view {
+            display: none;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .view.active {
+            display: flex;
+        }
+
+        /* reused button style (matches .page-btn) */
+        .d-btn {
+            padding: 10px 20px;
+            background: var(--pcolor);
+            border: 1px solid var(--pcolor);
+            color: white;
+            cursor: pointer;
+            transition: .5s ease;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            font-weight: 600;
+            font-family: 'Cormorant Garamond', serif;
+            text-wrap: nowrap;
+        }
+
+        .d-btn:hover {
+            background: transparent;
+            color: var(--pcolor);
+        }
+
+
+        /* generic panel */
+        .panel {
+            background: var(--card);
+            border: 1px solid #232323;
+            padding: 25px;
+            overflow-x: auto;
+            margin: 10px;
+        }
+
+
+        .panel h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.6;
+            color: white;
+            margin-bottom: 18px;
+        }
+
+        .panel-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 18px;
+
+        }
+
+        .panel-head h3 {
+            margin-bottom: 0;
+        }
+
+
+        /* stat cards */
+        .stat-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 10px;
+        }
+
+        .stat-card {
+            background: var(--card);
+            border: 1px solid #232323;
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            transition: .4s ease;
+        }
+
+        .stat-card:hover {
+            border-color: var(--pcolor);
+        }
+
+        .stat-card .top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .stat-card .material-symbols-outlined {
+            background: var(--pcolor);
+            color: #fff;
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .stat-card h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            font-size: 28px;
+            color: white;
+        }
+
+        .stat-card p {
+            font-size: 12px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+
+        .stat-card .delta {
+            font-size: 12px;
+            color: #1fa855;
+        }
+
+        .stat-card .delta.down {
+            color: var(--pcolor);
+        }
+
+        /* table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+
+        }
+
+        thead th {
+            text-align: left;
+            font-size: 11px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 10px 12px;
+            border-bottom: 1px solid #262626;
+            font-weight: 600;
+        }
+
+        tbody td {
+            padding: 14px 12px;
+            font-size: 13px;
+            color: #ddd;
+            border-bottom: 1px solid #1e1e1e;
+            text-wrap: nowrap;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .cell-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+        }
+
+        .cell-item img {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .badge {
+            padding: 5px 12px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+
+        .badge.delivered {
+            background: rgba(31, 168, 85, 0.15);
+            color: #1fa855;
+        }
+
+        .badge.transit {
+            background: rgba(231, 169, 169, 0.15);
+            color: var(--hcolor);
+        }
+
+        .badge.pending {
+            background: rgba(209, 116, 116, 0.15);
+            color: var(--pcolor);
+        }
+
+        .badge.active {
+            background: rgba(31, 168, 85, 0.15);
+            color: #1fa855;
+        }
+
+        .badge.maintenance {
+            background: rgba(209, 116, 116, 0.15);
+            color: var(--pcolor);
+        }
+
+        /* two column layout */
+        .split-2 {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 20px;
+        }
+
+        /* staff grid */
+        .fleet-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .fleet-card {
+            border: 1px solid #232323;
+            overflow: hidden;
+            background: var(--card);
+        }
+
+        .fleet-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            object-position: top;
+            filter: grayscale(50%);
+            transition: .5s ease;
+        }
+
+        .fleet-card:hover img {
+            filter: grayscale(0%);
+        }
+
+        .fleet-card-body {
+            padding: 16px;
+            border-top: 3px solid var(--pcolor);
+        }
+
+        .fleet-card-body h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            font-size: 15px;
+            color: white;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .fleet-card-body p {
+            font-size: 12px;
+            color: #999;
+            margin-bottom: 10px;
+        }
+
+        /* branches gallery */
+        .wh-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .wh-card {
+            position: relative;
+            overflow: hidden;
+            height: 190px;
+        }
+
+        .wh-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .6s ease;
+        }
+
+        .wh-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .wh-card .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.9) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 16px;
+        }
+
+        .wh-card .overlay h4 {
+            color: #fff;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 15px;
+            text-transform: uppercase;
+        }
+
+        .wh-card .overlay span {
+            color: var(--hcolor);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* client cards */
+        .cust-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .cust-card {
+            background: var(--card);
+            border: 1px solid #232323;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .cust-card img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 12px;
+            border: 1px solid var(--pcolor);
+        }
+
+        .cust-card h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            font-size: 15px;
+            text-transform: uppercase;
+            color: white;
+        }
+
+        .cust-card span {
+            font-size: 12px;
+            color: #999;
+        }
+
+        .cust-card .cust-stat {
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--pcolor);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+
+        @media (max-width: 1100px) {
+
+            .stat-row,
+            .fleet-grid,
+            .wh-grid,
+            .cust-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .split-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 900px) {
+
+            .sidebar {
+                position: fixed;
+                inset: 0px;
+                transform: translateX(-120%);
+                transition: .2s ease;
+                z-index: 9999;
+                width: 320px;
+
+            }
+
+            .topbar-right>.material-symbols-outlined {
+                color: white;
+                cursor: pointer;
+            }
+
+            .sidebar.vis {
+                transform: translateX(0);
+            }
+
+            .topbar>h2 {
+                display: none;
+            }
+
+            .search-box {
+                display: none;
+            }
+
+            .topbar {
+                padding: 10px 10px;
+            }
+
+            .topbarimgcontainer {
+                display: flex;
+            }
+
+            .sidebar-logo {
+                justify-content: space-between;
+            }
+
+            .sidebar-logo .adminclose {
+                display: block;
+            }
+
+            .topbarimgcontainer .topbarmenu {
+                display: block;
+                color: white;
+            }
+
+            .topbarimgcontainer img {
+                display: block;
+            }
+
+            .topbar-right>span {
+                font-size: 20px;
+            }
+
+        }
+
+        @media (max-width: 560px) {
+
+            .stat-row,
+            .fleet-grid,
+            .wh-grid,
+            .cust-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .topbar {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <img src="./src/logo.webp" alt="Blush & Bloom logo" class="logimg">
+            <span class="material-symbols-outlined adminclose">close</span>
+        </div>
+
+        <span class="nav-group-label">Studio Management</span>
+        <nav class="side-nav">
+            <button class="active" onclick="showView('overview', this)"><span
+                    class="material-symbols-outlined">dashboard</span> Overview</button>
+            <button onclick="showView('orders', this)"><span class="material-symbols-outlined">shopping_bag</span>
+                Orders</button>
+            <button onclick="showView('staff', this)"><span class="material-symbols-outlined">badge</span>
+                Staff</button>
+            <button onclick="showView('branches', this)"><span class="material-symbols-outlined">store</span>
+                Studios</button>
+
+            <button onclick="showView('clients', this)"><span class="material-symbols-outlined">group</span>
+                Clients</button>
+            <button class="logoutbtn"><span class="material-symbols-outlined">logout</span>
+                Logout</button>
+        </nav>
+
+        <div class="sidebar-footer">
+            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200&auto=format&fit=crop"
+                alt="Admin">
+            <div>
+                <h4 id="username">Aarthi Ramesh</h4>
+                <span>Studio Manager</span>
+            </div>
+        </div>
+    </aside>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="main">
+
+        <div class="topbar">
+            <div class="topbarimgcontainer">
+                <span class="material-symbols-outlined topbarmenu">menu</span>
+                <img src="./src/logo.webp" alt="Blush & Bloom logo" class="logimg">
+            </div>
+            <h2 id="topbarTitle">Overview</h2>
+            <div class="topbar-right">
+                <div class="search-box">
+                    <span class="material-symbols-outlined errorpage">search</span>
+                    <input type="text" placeholder="Search orders, clients...">
+                </div>
+                <span class="material-symbols-outlined errorpage">notifications</span>
+                <div class="topbar-avatar"><img
+                        src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200&auto=format&fit=crop"
+                        alt="Admin"></div>
+            </div>
+        </div>
+
+        <!-- ========== 1. OVERVIEW VIEW ========== -->
+        <div class="view active" id="overview">
+            <div class="stat-row">
+                <div class="stat-card">
+                    <div class="top"><span class="material-symbols-outlined">shopping_bag</span></div>
+                    <h2>3,412</h2>
+                    <p>Total Orders Handled</p>
+                    <span class="delta">+15.2% this month</span>
+                </div>
+
+                <div class="stat-card">
+                    <div class="top"><span class="material-symbols-outlined">badge</span></div>
+                    <h2>28</h2>
+                    <p>Active Staff Members</p>
+                    <span class="delta">+3 new hires</span>
+                </div>
+
+                <div class="stat-card">
+                    <div class="top"><span class="material-symbols-outlined">event_available</span></div>
+                    <h2>64</h2>
+                    <p>Appointments This Week</p>
+                    <span class="delta">+8.7% this week</span>
+                </div>
+
+                <div class="stat-card">
+                    <div class="top"><span class="material-symbols-outlined">payments</span></div>
+                    <h2>$96.4K</h2>
+                    <p>Monthly Revenue</p>
+                    <span class="delta">+11.4% this month</span>
+                </div>
+            </div>
+
+            <div class="split-2">
+                <div class="panel">
+                    <div class="panel-head">
+                        <h3>Recent Activity</h3>
+                        <button class="d-btn errorpage">View All</button>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Reference</th>
+                                <th>Order Type</th>
+                                <th>Latest Update</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td class="cell-item">#BB-4521</td>
+                                <td>Skincare Bundle</td>
+                                <td>Package Dispatched</td>
+                                <td><span class="badge delivered">Delivered</span></td>
+                            </tr>
+
+                            <tr>
+                                <td class="cell-item">#BB-4518</td>
+                                <td>Bridal Makeup Booking</td>
+                                <td>Consultation Scheduled</td>
+                                <td><span class="badge transit">In Progress</span></td>
+                            </tr>
+
+                            <tr>
+                                <td class="cell-item">#BB-4514</td>
+                                <td>Facial Appointment</td>
+                                <td>Awaiting Confirmation</td>
+                                <td><span class="badge pending">Pending</span></td>
+                            </tr>
+
+                            <tr>
+                                <td class="cell-item">#BB-4509</td>
+                                <td>Fragrance Order</td>
+                                <td>Delivered To Client</td>
+                                <td><span class="badge delivered">Delivered</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="panel">
+                    <h3>Studio Workload Status</h3>
+
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>Stylist Utilization</td>
+                                <td style="text-align:right;font-weight:600;color:white;">82%</td>
+                            </tr>
+
+                            <tr>
+                                <td>Open Appointment Slots</td>
+                                <td style="text-align:right;font-weight:600;color:white;">21</td>
+                            </tr>
+
+                            <tr>
+                                <td>Therapists On Floor</td>
+                                <td style="text-align:right;font-weight:600;color:white;">16 / 20</td>
+                            </tr>
+
+                            <tr>
+                                <td>Orders Pending Packing</td>
+                                <td style="text-align:right;font-weight:600;color:white;">12</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== 2. ORDERS VIEW ========== -->
+        <div class="view" id="orders">
+            <div class="stat-row">
+                <div class="stat-card">
+                    <div class="top">
+                        <span class="material-symbols-outlined">shopping_bag</span>
+                    </div>
+                    <h2>64</h2>
+                    <p>Open Orders</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="top">
+                        <span class="material-symbols-outlined">move_to_inbox</span>
+                    </div>
+                    <h2>29</h2>
+                    <p>New Order Requests</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="top">
+                        <span class="material-symbols-outlined">task_alt</span>
+                    </div>
+                    <h2>3,318</h2>
+                    <p>Completed Orders</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="top">
+                        <span class="material-symbols-outlined">priority_high</span>
+                    </div>
+                    <h2>5</h2>
+                    <p>Urgent Orders</p>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-head">
+                    <h3>Orders</h3>
+                    <button class="d-btn errorpage">Create Order</button>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Reference</th>
+                            <th>Client</th>
+                            <th>Order Type</th>
+                            <th>Assigned Staff</th>
+                            <th>Date Placed</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>#BB-4521</td>
+                            <td>Vantra Living</td>
+                            <td>Skincare Bundle</td>
+                            <td>Divya Krishnan</td>
+                            <td>Jul 08</td>
+                            <td><span class="badge delivered">Delivered</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>#BB-4518</td>
+                            <td>R. Iyer</td>
+                            <td>Bridal Makeup</td>
+                            <td>Priya Suresh</td>
+                            <td>Jul 07</td>
+                            <td><span class="badge transit">In Progress</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>#BB-4514</td>
+                            <td>Coastline Spa</td>
+                            <td>Facial Appointment</td>
+                            <td>Karthik Raja</td>
+                            <td>Jul 07</td>
+                            <td><span class="badge pending">Pending</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>#BB-4509</td>
+                            <td>V. Singh</td>
+                            <td>Fragrance Order</td>
+                            <td>Aarthi Ramesh</td>
+                            <td>Jul 06</td>
+                            <td><span class="badge delivered">Delivered</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>#BB-4503</td>
+                            <td>Nova Cosmetics</td>
+                            <td>Hair Styling</td>
+                            <td>Karthik Raja</td>
+                            <td>Jul 05</td>
+                            <td><span class="badge transit">In Progress</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ========== 3. STAFF VIEW ========== -->
+        <div class="view" id="staff">
+            <div class="stat-row">
+                <div class="stat-card">
+                    <div class="top"><span class="material-symbols-outlined">badge</span></div>
+                    <h2>28</h2>
+                    <p>Total Staff</p>
+                </div>
+                <div class="stat-card">
+                    <div class="top"><span class="material-symbols-outlined">face_retouching_natural</span></div>
+                    <h2>12</h2>
+                    <p>Makeup Artists</p>
+                </div>
+                <div class="stat-card">
+                    <div class="top"><span class="material-symbols-outlined">spa</span></div>
+                    <h2>9</h2>
+                    <p>Therapists</p>
+                </div>
+                <div class="stat-card">
+                    <div class="top"><span class="material-symbols-outlined">event_busy</span></div>
+                    <h2>2</h2>
+                    <p>On Leave</p>
+                </div>
+            </div>
+
+            <div class="panel">
+                <h3>Staff Roster</h3>
+                <div class="fleet-grid">
+                    <div class="fleet-card">
+                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=600&auto=format&fit=crop"
+                            alt="Priya Suresh">
+                        <div class="fleet-card-body">
+                            <h4>Priya Suresh</h4>
+                            <p>Lead Makeup Artist - 20 Bookings This Week</p>
+                            <span class="badge active">On Duty</span>
+                        </div>
+                    </div>
+                    <div class="fleet-card">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=600&auto=format&fit=crop"
+                            alt="Divya Krishnan">
+                        <div class="fleet-card-body">
+                            <h4>Divya Krishnan</h4>
+                            <p>Skincare Specialist - 18 Bookings This Week</p>
+                            <span class="badge active">On Duty</span>
+                        </div>
+                    </div>
+                    <div class="fleet-card">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=600&auto=format&fit=crop"
+                            alt="Karthik Raja">
+                        <div class="fleet-card-body">
+                            <h4>Karthik Raja</h4>
+                            <p>Hair Stylist - 11 Bookings This Week</p>
+                            <span class="badge maintenance">On Leave</span>
+                        </div>
+                    </div>
+                    <div class="fleet-card">
+                        <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=600&auto=format&fit=crop"
+                            alt="Meera Pillai">
+                        <div class="fleet-card-body">
+                            <h4>Meera Pillai</h4>
+                            <p>Spa Therapist - 15 Bookings This Week</p>
+                            <span class="badge active">On Duty</span>
+                        </div>
+                    </div>
+                    <div class="fleet-card">
+                        <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?q=80&w=600&auto=format&fit=crop"
+                            alt="Vikram Nair">
+                        <div class="fleet-card-body">
+                            <h4>Vikram Nair</h4>
+                            <p>Brow &amp; Lash Specialist - 9 Bookings This Week</p>
+                            <span class="badge active">On Duty</span>
+                        </div>
+                    </div>
+                    <div class="fleet-card">
+                        <img src="https://images.unsplash.com/photo-1541823709867-1b206113eafd?q=80&w=600&auto=format&fit=crop"
+                            alt="Sanjana Menon">
+                        <div class="fleet-card-body">
+                            <h4>Sanjana Menon</h4>
+                            <p>Nail Technician - 14 Bookings This Week</p>
+                            <span class="badge active">On Duty</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== 4. STUDIOS (BRANCHES) VIEW ========== -->
+        <div class="view" id="branches">
+            <div class="stat-row">
+                <div class="stat-card">
+                    <div class="top"><span class="material-symbols-outlined">store</span></div>
+                    <h2>6</h2>
+                    <p>Active Studios</p>
+                </div>
+                <div class="stat-card">
+                    <div class="top"><span class="material-symbols-outlined">event_note</span></div>
+                    <h2>84%</h2>
+                    <p>Avg. Booking Capacity</p>
+                </div>
+                <div class="stat-card">
+                    <div class="top"><span class="material-symbols-outlined">inventory_2</span></div>
+                    <h2>3,120</h2>
+                    <p>Products In Stock</p>
+                </div>
+                <div class="stat-card">
+                    <div class="top"><span class="material-symbols-outlined">summarize</span></div>
+                    <h2>18</h2>
+                    <p>Appointments Today</p>
+                </div>
+            </div>
+
+            <div class="panel">
+                <h3>Studio Locations</h3>
+                <div class="wh-grid">
+                    <div class="wh-card">
+                        <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?q=80&w=800&auto=format&fit=crop"
+                            alt="Chennai head studio">
+                        <div class="overlay">
+                            <h4>Chennai HQ Studio</h4><span>Booking 92%</span>
+                        </div>
+                    </div>
+                    <div class="wh-card">
+                        <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=800&auto=format&fit=crop"
+                            alt="Mumbai studio">
+                        <div class="overlay">
+                            <h4>Mumbai Studio</h4><span>Booking 78%</span>
+                        </div>
+                    </div>
+                    <div class="wh-card">
+                        <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=80&w=800&auto=format&fit=crop"
+                            alt="Bangalore studio">
+                        <div class="overlay">
+                            <h4>Bangalore Studio</h4><span>Booking 65%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel">
+                <h3>Studio Booking Snapshot</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Studio</th>
+                            <th>Specialty</th>
+                            <th>Open Appointments</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Chennai HQ Studio</td>
+                            <td>Bridal &amp; Makeup</td>
+                            <td>42</td>
+                            <td><span class="badge active">Healthy</span></td>
+                        </tr>
+                        <tr>
+                            <td>Mumbai Studio</td>
+                            <td>Skincare &amp; Facials</td>
+                            <td>28</td>
+                            <td><span class="badge active">Healthy</span></td>
+                        </tr>
+                        <tr>
+                            <td>Bangalore Studio</td>
+                            <td>Hair &amp; Spa</td>
+                            <td>15</td>
+                            <td><span class="badge maintenance">Understaffed</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ========== 5. CLIENTS VIEW ========== -->
+        <div class="view" id="clients">
+            <div class="stat-row">
+                <div class="stat-card">
+                    <div class="top"><span class="material-symbols-outlined">group</span></div>
+                    <h2>2,046</h2>
+                    <p>Total Clients</p>
+                </div>
+                <div class="stat-card">
+                    <div class="top"><span class="material-symbols-outlined">person_add</span></div>
+                    <h2>112</h2>
+                    <p>New This Month</p>
+                </div>
+                <div class="stat-card">
+                    <div class="top"><span class="material-symbols-outlined">workspace_premium</span></div>
+                    <h2>246</h2>
+                    <p>Membership Accounts</p>
+                </div>
+                <div class="stat-card">
+                    <div class="top"><span class="material-symbols-outlined">support_agent</span></div>
+                    <h2>14</h2>
+                    <p>Open Client Inquiries</p>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-head">
+                    <h3>Client Directory</h3>
+                    <button class="d-btn errorpage">Add Client</button>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Client</th>
+                            <th>Contact</th>
+                            <th>Account Type</th>
+                            <th>Orders Placed</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="cell-item">Aarthi R.</td>
+                            <td>aarthi.r@example.com</td>
+                            <td>Membership</td>
+                            <td>28</td>
+                        </tr>
+                        <tr>
+                            <td class="cell-item">Priya K.</td>
+                            <td>priya.k@example.com</td>
+                            <td>Regular</td>
+                            <td>16</td>
+                        </tr>
+                        <tr>
+                            <td class="cell-item">Sanjana M.</td>
+                            <td>sanjana.m@example.com</td>
+                            <td>Membership</td>
+                            <td>34</td>
+                        </tr>
+                        <tr>
+                            <td class="cell-item">V. Singh</td>
+                            <td>vsingh@example.com</td>
+                            <td>Regular</td>
+                            <td>9</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+
+        //
+        const topbarmenu = document.querySelector(".topbarmenu")
+        const adminclose = document.querySelector(".adminclose")
+        const sidebar = document.querySelector(".sidebar")
+
+        topbarmenu.addEventListener("click", () => {
+            sidebar.classList.toggle('vis')
+        })
+
+        adminclose.addEventListener("click", () => {
+            sidebar.classList.remove('vis')
+        })
+
+        // 
+        const logoutbtn = document.querySelector(".logoutbtn")
+        logoutbtn.addEventListener("click", () => {
+            window.location.href = "index.html"
+        })
+
+        // email
+
+        const username = document.querySelector("#username");
+
+        const email = localStorage.getItem("useremail");
+
+        if (email) {
+            username.textContent = email.split("@")[0];
+        }
+
+        // errorpage
+        let errorpage = document.querySelectorAll(".errorpage")
+        errorpage.forEach((error) => {
+            error.addEventListener("click", () => {
+                window.location.href = "404.html";
+            })
+        })
+
+        // logimg
+
+        let logimg = document.querySelectorAll(".logimg")
+        logimg.forEach((img) => {
+            img.addEventListener("click", () => {
+                window.location.href = "admin.html";
+            })
+        })
+
+
+        const titles = {
+            overview: "Overview",
+            orders: "Orders",
+            staff: "Staff",
+            branches: "Studios",
+            clients: "Clients"
+        };
+
+        function showView(id, btn) {
+            document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+
+            document.querySelectorAll('.side-nav button').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            document.getElementById('topbarTitle').innerText = titles[id];
+            sidebar.classList.remove('vis')
+        }
+    </script>
+
+</body>
+
+</html>
