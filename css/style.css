@@ -32,85 +32,16 @@ body {
     width: 100%;
 }
 
-/* .header.active .head1 {
-    display: none;
-}
-
-
-.head1 {
-    display: none;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--pcolor);
-    padding: 20px;
-}
-
-.head-details {
-    display: flex;
-    gap: 20px;
-}
-
-.head-details div {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-
-}
-
-.head-details div a {
-    text-decoration: none;
-    font-size: 18px;
-    color: white;
-}
-
-.head-details div a:hover {
-    color: black;
-}
-
-.head-details div:hover span {
-    color: black;
-}
-
-.head-details div span {
-    font-size: 20px;
-    color: white;
-}
-
-.head-sotial {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.head-sotial h4 {
-    font-size: 16px;
-    text-transform: uppercase;
-    color: white;
-}
-
-.head-sotial-icons {
-    display: flex;
-    gap: 10px;
-}
-
-.head-sotial-icons a {
-    font-size: 22px;
-    color: white;
-    transition: .6s ease;
-}
-
-.head-sotial-icons a:hover {
-    transform: rotate(360deg) scale(1.5);
-} */
-
 .head2 {
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.24);
-    backdrop-filter: blur(10px);
+
+
+
 }
+
 
 .nav-links {
     display: flex;
@@ -150,20 +81,21 @@ body {
     gap: 20px;
 }
 
-.head-icons a{
+.head-icons a {
     text-decoration: none;
 }
 
-.head-icons a span{
+.head-icons a span {
     font-size: 25px;
+    color: white;
 }
 
-.tagicon{
+.tagicon {
     display: flex;
     position: relative;
 }
 
-.itag{
+.itag {
     position: absolute;
     top: -10px;
     right: -10px;
@@ -191,19 +123,19 @@ body {
     padding: 10px;
 }
 
-.head-icons a span:hover{
+.head-icons a span:hover {
     color: var(--pcolor);
 }
 
-.log2{
+.log2 {
     display: flex;
-      font-size: 28px;
+    font-size: 28px;
     color: white;
     transition: .6s ease
 }
 
 
-.menu-btn:hover{
+.menu-btn:hover {
     color: black;
     background: white;
 }
@@ -299,13 +231,13 @@ body {
 
 }
 
-.side-links a:hover{
+.side-links a:hover {
     background: var(--pcolor);
     border: 1px solid var(--pcolor);
     border-bottom: none;
 }
 
-.side-links a.active{
+.side-links a.active {
     background: var(--pcolor);
 }
 
@@ -320,24 +252,26 @@ body {
     margin-bottom: 15px;
     color: white;
 }
-.sideimage{
+
+.sideimage {
     position: relative;
 }
-.sideimage img{
+
+.sideimage img {
     border-top-left-radius: 50%;
     border-top-right-radius: 50%;
 }
 
-.sideimage h1{
+.sideimage h1 {
     position: absolute;
     color: white;
     bottom: 20px;
-    left:10%;
+    left: 10%;
     font-size: 40px;
     display: flex;
-    justify-content: center ;
+    justify-content: center;
     text-transform: uppercase;
-    
+
 }
 
 .sidebar-details {
@@ -358,7 +292,7 @@ body {
 
 }
 
-.sidebar-details a:hover{
+.sidebar-details a:hover {
     color: var(--pcolor);
 }
 
@@ -373,7 +307,8 @@ body {
     .head1 {
         padding: 15px 15px;
     }
-    .head2{
+
+    .head2 {
         justify-content: space-between;
     }
 
@@ -405,10 +340,10 @@ body {
         width: 140px;
     }
 
-    .head-icons a span{
+    .head-icons a span {
         font-size: 22px;
     }
-  
+
 
 
     .menu-btn {
@@ -426,12 +361,13 @@ body {
 }
 
 @media (max-width:450px) {
+
     .searchbtn,
-    .tagicon{
+    .tagicon {
         display: none;
     }
 
-    .head-sidebar{
+    .head-sidebar {
         padding: 20px;
     }
 }
