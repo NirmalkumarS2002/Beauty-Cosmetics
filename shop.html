@@ -12,7 +12,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
         
     <link rel="stylesheet" href="./css/style.css">
 
@@ -140,22 +142,7 @@
             color: #fff;
         }
 
-        .toolbar-right {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 13px;
-            color: #6b5c5c;
-        }
-
-        .toolbar-right select {
-            border: 1px solid #e6c9c9;
-            border-radius: 24px;
-            padding: 9px 18px;
-            font-size: 13px;
-            color: var(--ink);
-            background: #fff;
-        }
+    
 
         .shop-grid {
             display: grid;
@@ -584,9 +571,9 @@
 
 
             <div class="side-links">
-                <a href="index.html" class="active">Home</a>
+                <a href="index.html">Home</a>
                 <a href="about.html">About</a>
-                <a href="shop.html">Shop</a>
+                <a href="shop.html" class="active">Shop</a>
                 <a href="service.html">Service</a>
                 <a href="contact.html">Contact</a>
             </div>
@@ -680,9 +667,9 @@
             <a href="index.html"><img src="./src/logo.webp" alt="" class="companylogo"></a>
 
             <div class="nav-links">
-                <a href="index.html" class="active">Home</a>
+                <a href="index.html">Home</a>
                 <a href="about.html">About</a>
-                <a href="shop.html">Shop</a>
+                <a href="shop.html" class="active">Shop</a>
                 <a href="service.html">Service</a>
                 <a href="contact.html">Contact</a>
             </div>
@@ -721,21 +708,13 @@
     <section class="shop-grid-section">
         <div class="shop-toolbar">
             <div class="toolbar-tags">
-                <button class="active">All</button>
-                <button>Skincare</button>
-                <button>Makeup</button>
-                <button>Hair Care</button>
-                <button>Fragrance</button>
+                <button class="active errorpage">All</button>
+                <button class="errorpage">Skincare</button>
+                <button class="errorpage">Makeup</button>
+                <button class="errorpage">Hair Care</button>
+                <button class="errorpage">Fragrance</button>
             </div>
-            <div class="toolbar-right">
-                Sort by
-                <select>
-                    <option>Popularity</option>
-                    <option>Price: Low to High</option>
-                    <option>Price: High to Low</option>
-                    <option>Newest</option>
-                </select>
-            </div>
+        
         </div>
 
         <div class="shop-grid">
@@ -866,7 +845,7 @@
         </div>
 
         <div class="load-more">
-            <button>Load More Products</button>
+            <button class="errorpage">Load More Products</button>
         </div>
     </section>
 
@@ -878,7 +857,7 @@
             what your routine needs right now.</p>
 
         <div class="cat-tab-grid">
-            <div class="cat-tab-card">
+            <div class="cat-tab-card errorpage">
                 <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?q=80&w=700&auto=format&fit=crop"
                     alt="Skincare essentials">
                 <div class="cat-tab-overlay">
@@ -886,7 +865,7 @@
                     <p>24 Products</p>
                 </div>
             </div>
-            <div class="cat-tab-card">
+            <div class="cat-tab-card errorpage">
                 <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=700&auto=format&fit=crop"
                     alt="Makeup collection flatlay">
                 <div class="cat-tab-overlay">
@@ -894,7 +873,7 @@
                     <p>32 Products</p>
                 </div>
             </div>
-            <div class="cat-tab-card">
+            <div class="cat-tab-card errorpage">
                 <img src="https://images.unsplash.com/photo-1526947425960-945c6e72858f?q=80&w=700&auto=format&fit=crop"
                     alt="Fragrance bottles">
                 <div class="cat-tab-overlay">
@@ -902,7 +881,7 @@
                     <p>18 Products</p>
                 </div>
             </div>
-            <div class="cat-tab-card">
+            <div class="cat-tab-card errorpage">
                 <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=700&auto=format&fit=crop"
                     alt="Hair care products">
                 <div class="cat-tab-overlay">
@@ -928,7 +907,7 @@
                 <span class="old">$ 96.00</span>
                 <span class="new">$ 68.00</span>
             </div>
-            <button class="deal-btn">Shop This Deal</button>
+            <button class="deal-btn errorpage">Shop This Deal</button>
         </div>
     </section>
 

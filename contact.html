@@ -14,6 +14,9 @@
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css">
 
     <style>
@@ -301,6 +304,7 @@
             align-items: flex-start;
             gap: 8px;
             margin-bottom: 6px;
+            cursor: pointer;
         }
 
         .ctc-loc-body p span.material-symbols-outlined {
@@ -499,11 +503,11 @@
 
 
             <div class="side-links">
-                <a href="index.html" class="active">Home</a>
+                <a href="index.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="shop.html">Shop</a>
                 <a href="service.html">Service</a>
-                <a href="contact.html">Contact</a>
+                <a href="contact.html" class="active">Contact</a>
             </div>
 
 
@@ -593,11 +597,11 @@
             <a href="index.html"><img src="./src/logo.webp" alt="" class="companylogo"></a>
 
             <div class="nav-links">
-                <a href="index.html" class="active">Home</a>
+                <a href="index.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="shop.html">Shop</a>
                 <a href="service.html">Service</a>
-                <a href="contact.html">Contact</a>
+                <a href="contact.html" class="active">Contact</a>
             </div>
 
             <div class="head-icons">
@@ -632,22 +636,22 @@
 
     <!-- 2. CONTACT INFO CARDS -->
     <section class="ctc-info">
-        <div class="ctc-info-card">
+        <div class="ctc-info-card errorpage">
             <div class="ctc-info-icon"><span class="material-symbols-outlined">call</span></div>
             <h4>Call Us</h4>
             <p>+91 98765 43210<br>Mon - Sat, 10am to 7pm</p>
         </div>
-        <div class="ctc-info-card">
+        <div class="ctc-info-card errorpage">
             <div class="ctc-info-icon"><span class="material-symbols-outlined">mail</span></div>
             <h4>Email Us</h4>
             <p>hello@blushandbloom.com<br>Replies within 24 hours</p>
         </div>
-        <div class="ctc-info-card">
+        <div class="ctc-info-card errorpage">
             <div class="ctc-info-icon"><span class="material-symbols-outlined">location_on</span></div>
             <h4>Visit Studio</h4>
             <p>14 Rosewood Lane<br>Chennai, Tamil Nadu</p>
         </div>
-        <div class="ctc-info-card">
+        <div class="ctc-info-card errorpage">
             <div class="ctc-info-icon"><span class="material-symbols-outlined">schedule</span></div>
             <h4>Studio Hours</h4>
             <p>Mon - Sat: 10am - 8pm<br>Sunday: 11am - 5pm</p>
@@ -692,12 +696,7 @@
                 <div class="ctc-form-row">
                     <div class="ctc-form-field full">
                         <label>Subject</label>
-                        <select>
-                            <option>General Enquiry</option>
-                            <option>Book A Treatment</option>
-                            <option>Order Support</option>
-                            <option>Feedback</option>
-                        </select>
+                        <input type="text" placeholder="Subject">
                     </div>
                 </div>
 
@@ -728,8 +727,8 @@
                 </div>
                 <div class="ctc-loc-body">
                     <h4>Anna Nagar Studio</h4>
-                    <p><span class="material-symbols-outlined">location_on</span>2nd Avenue, Anna Nagar, Chennai</p>
-                    <p><span class="material-symbols-outlined">call</span>+91 98765 11111</p>
+                    <p class="errorpage"><span class="material-symbols-outlined">location_on</span>2nd Avenue, Anna Nagar, Chennai</p>
+                    <p class="errorpage"><span class="material-symbols-outlined">call</span>+91 98765 11111</p>
                 </div>
             </div>
 
@@ -740,8 +739,8 @@
                 </div>
                 <div class="ctc-loc-body">
                     <h4>Adyar Studio</h4>
-                    <p><span class="material-symbols-outlined">location_on</span>Lattice Bridge Road, Adyar, Chennai</p>
-                    <p><span class="material-symbols-outlined">call</span>+91 98765 22222</p>
+                    <p class="errorpage"><span class="material-symbols-outlined">location_on</span>Lattice Bridge Road, Adyar, Chennai</p>
+                    <p class="errorpage"><span class="material-symbols-outlined">call</span>+91 98765 22222</p>
                 </div>
             </div>
 
@@ -752,8 +751,8 @@
                 </div>
                 <div class="ctc-loc-body">
                     <h4>Velachery Studio</h4>
-                    <p><span class="material-symbols-outlined">location_on</span>100 Feet Road, Velachery, Chennai</p>
-                    <p><span class="material-symbols-outlined">call</span>+91 98765 33333</p>
+                    <p class="errorpage"><span class="material-symbols-outlined">location_on</span>100 Feet Road, Velachery, Chennai</p>
+                    <p class="errorpage"><span class="material-symbols-outlined">call</span>+91 98765 33333</p>
                 </div>
             </div>
         </div>
@@ -798,10 +797,10 @@
             <p>Join our community across social platforms for skincare tips,
                 new arrivals and behind the scenes from our studios.</p>
             <div class="ctc-social-icons">
-                <a href="#"><span class="material-symbols-outlined">photo_camera</span></a>
-                <a href="#"><span class="material-symbols-outlined">forum</span></a>
-                <a href="#"><span class="material-symbols-outlined">play_circle</span></a>
-                <a href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+                <a href="404.html"><span class="material-symbols-outlined">photo_camera</span></a>
+                <a href="404.html"><span class="material-symbols-outlined">forum</span></a>
+                <a href="404.html"><span class="material-symbols-outlined">play_circle</span></a>
+                <a href="404.html"><span class="material-symbols-outlined">alternate_email</span></a>
             </div>
         </div>
     </section>

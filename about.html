@@ -13,7 +13,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
-        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css">
 
     <style>
@@ -117,7 +119,9 @@
             width: 100%;
             aspect-ratio: 4/5;
             object-fit: cover;
-            border-radius: 20px;
+            border-radius: 20px; 
+            min-height: 70vh;
+            height: 70vh;
         }
 
         .about-hero-img .float-card {
@@ -184,17 +188,12 @@
         }
 
         .story-img {
-            position: sticky;
-            top: 40px;
-        }
-
-        .story-img img {
+            background: url("https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=800&auto=format&fit=crop") center/cover no-repeat;
+            height: 100%;
             width: 100%;
-            border-radius: 18px;
-            aspect-ratio: 3/4;
-            object-fit: cover;
         }
 
+       
         .timeline {
             border-left: 1px solid #e6c9c9;
             padding-left: 40px;
@@ -483,10 +482,7 @@
                 grid-template-columns: 1fr;
             }
 
-            .story-img {
-                position: static;
-            }
-
+           
             .values-grid,
             .team-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -554,8 +550,8 @@
 
 
             <div class="side-links">
-                <a href="index.html" class="active">Home</a>
-                <a href="about.html">About</a>
+                <a href="index.html">Home</a>
+                <a href="about.html"  class="active">About</a>
                 <a href="shop.html">Shop</a>
                 <a href="service.html">Service</a>
                 <a href="contact.html">Contact</a>
@@ -648,8 +644,8 @@
             <a href="index.html"><img src="./src/logo.webp" alt="" class="companylogo"></a>
 
             <div class="nav-links">
-                <a href="index.html" class="active">Home</a>
-                <a href="about.html">About</a>
+                <a href="index.html">Home</a>
+                <a href="about.html" class="active">About</a>
                 <a href="shop.html">Shop</a>
                 <a href="service.html">Service</a>
                 <a href="contact.html">Contact</a>
@@ -679,7 +675,7 @@
                 our team replies within one business day.</p>
 
             <div class="ctc-hero-menus">
-                <a href="index.html">Home</a> / <p>contact</p>
+                <a href="index.html">Home</a> / <p>About</p>
             </div>
         </div>
     </section>
@@ -688,7 +684,7 @@
     <section class="about-hero">
         <div class="about-hero-img">
             <img class="main-img"
-                src="https://images.unsplash.com/photo-1512207736890-6ffed4b0c94f?q=80&w=900&auto=format&fit=crop"
+                src="./src/slider1.webp"
                 alt="Beauty studio skincare arrangement">
             <div class="float-card">
                 <h3>08+</h3>
@@ -715,8 +711,7 @@
 
         <div class="story-grid">
             <div class="story-img">
-                <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=800&auto=format&fit=crop"
-                    alt="Founding team workspace with beauty products">
+              
             </div>
 
             <div class="timeline">
@@ -866,7 +861,7 @@
             <h5>Come Say Hello</h5>
             <h2>Have a question, or just want to <em>talk beauty?</em></h2>
         </div>
-        <button class="about-cta-btn">Contact Us</button>
+        <button class="about-cta-btn errorpage">Contact Us</button>
     </section>
     
     <footer class="footer">
