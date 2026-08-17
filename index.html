@@ -43,6 +43,7 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            position: relative;
         }
 
         .hero-text {
@@ -83,20 +84,29 @@
             font-size: 18px;
             max-width: clamp(300px, 40vw, 500px);
             line-height: 1.5;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             color: rgba(224, 223, 223, 0.514);
         }
 
-        .hero-btn {
-            padding: 15px 50px;
-            font-size: 16px;
-            background: var(--pcolor);
-            border: none;
-            color: white;
-            border-radius: 7px;
-            width: fit-content;
-        }
 
+        .hero-btn {
+    padding: 17px 50px;
+    font-size: 14px;
+    background: var(--pcolor);
+    border: none;
+    color: white;
+    border-radius: 5px;
+    width: fit-content;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+    background: #000;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
         .scroll {
             position: absolute;
             bottom: 30px;
@@ -146,15 +156,21 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-
             display: flex;
             align-items: center;
             border: none;
             background: none;
-
             cursor: pointer;
             transition: .5s ease;
+        }
 
+        .hero-side-btns button:hover span {
+            transition: .5s ease;
+        }
+
+        .hero-side-btns button:hover span {
+            color: black;
+            transform: scale(1.2);
         }
 
         .hside1 {
@@ -168,7 +184,7 @@
         }
 
         .sarr1 {
-            font-size: 40px;
+            font-size: 40px !important;
             color: var(--pcolor);
         }
 
@@ -413,7 +429,7 @@
                 <a href="login.html" class="tagicon"><span class="material-symbols-outlined log2">favorite</span>
                     <p class="itag">0</p>
                 </a>
-                <a href="login.html"><span class="material-symbols-outlined log2">person</span></a>
+                <a href="login.html" class="logintag"><span class="material-symbols-outlined log2">person</span></a>
                 <span class="material-symbols-outlined menu-btn">menu</span>
             </div>
 
@@ -476,10 +492,10 @@
                 <h1>Information</h1>
                 <div class="foot-links">
                     <a href="">Pagination</>
-                    <a href="">Terms & Conditions</a>
-                    <a href="">Terms of use </a>
-                    <a href="">Privacy Policy</a>
-                    <a href="">Clothings</a>
+                        <a href="">Terms & Conditions</a>
+                        <a href="">Terms of use </a>
+                        <a href="">Privacy Policy</a>
+                        <a href="">Clothings</a>
                 </div>
             </div>
 
@@ -487,10 +503,10 @@
             <div class="footermain1">
                 <h1>Follow Us</h1>
                 <div class="foot-links foot-details">
-                    <a href="">+91 12343 67890</a>
-                    <a href="">+91 09876 12434</a>
-                    <a href="">admin@gmail.com </a>
-                    <a href="">chennai, Tamilnadu</a>
+                    <a href=""> <span class="material-symbols-outlined">call</span>+91 12343 67890</a>
+                    <a href=""> <span class="material-symbols-outlined">call</span>+91 09876 12434</a>
+                    <a href=""> <span class="material-symbols-outlined">mail</span>admin@gmail.com </a>
+                    <a href=""> <span class="material-symbols-outlined">location_on</span>Chennai, Tamilnadu</a>
                 </div>
 
                 <div class="footer-social">
@@ -501,16 +517,20 @@
                 </div>
             </div>
 
-            <div class="foot-newsletters">
+            <div class="foot-newsletters footermain1">
 
                 <h1>Newsletters</h1>
 
                 <p>Be the first who learns about our great promotions!</p>
 
                 <div class="foot-form">
-                    <input type="email" id="footemail">
-                    <button class="footbtn"Subscribe></button>
+                    <input type="email" id="footemail" placeholder="Email">
+                    <button class="footbtn"><span class="material-symbols-outlined">
+                            arrow_right_alt
+                        </span></button>
+
                 </div>
+                <p class="ferror"></p>
 
             </div>
 
