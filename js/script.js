@@ -59,7 +59,7 @@ fbtn.addEventListener("click", () => {
 
     if (ferr) {
         ferror.textContent = "Subscribe Successfully!"
-
+        femail.value=""
         setTimeout(() => {
             ferror.textContent = ""
         }, 3000);

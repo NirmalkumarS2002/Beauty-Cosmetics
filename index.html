@@ -688,6 +688,7 @@
             padding-bottom: 10px;
             margin-left: 30px;
             padding-right: 8vw;
+            padding-block: 20px;
             scrollbar-width: thin;
             scrollbar-color: var(--pcolor) transparent;
 
@@ -700,7 +701,12 @@
             background: #fff;
             border-radius: 14px;
             overflow: hidden;
+            transition: .4s ease;
         }
+
+         .arrival-card:hover{
+            box-shadow: 1px 1px 20px rgba(117, 81, 81, 0.788);
+         }
 
         .arrival-card img {
             width: 100%;
@@ -1032,7 +1038,7 @@
             </div>
 
             <div class="head-icons">
-                <a href="404.html" class="searchbtn"><span class="material-symbols-outlined search">Search</span></a>
+                <div class="searchbtn"><input type="text" placeholder="search" class="searchfield"><span class="material-symbols-outlined search errorpage">Search</span></div>
                 <a href="404.html" class="tagicon"><span class="material-symbols-outlined log2">local_mall</span>
                     <p class="itag">0</p>
                 </a>
@@ -1121,7 +1127,7 @@
             reordered again and again.</p>
 
         <div class="prod-grid">
-            <div class="prod-card">
+            <div class="prod-card errorpage">
                 <div class="prod-img-wrap">
                     <img src="./src/image_5.webp" alt="Rose glow serum">
                     <span class="prod-tag">Best Seller</span>
@@ -1137,7 +1143,7 @@
                 </div>
             </div>
 
-            <div class="prod-card">
+            <div class="prod-card errorpage">
                 <div class="prod-img-wrap">
                     <img src="./src/image_6.webp" alt="Velvet matte lipstick">
                     <span class="prod-tag">New</span>
@@ -1153,7 +1159,7 @@
                 </div>
             </div>
 
-            <div class="prod-card">
+            <div class="prod-card errorpage">
                 <div class="prod-img-wrap">
                     <img src="./src/image_7.webp" alt="Bloom eau de parfum">
                     <span class="prod-tag">Limited</span>
@@ -1169,7 +1175,7 @@
                 </div>
             </div>
 
-            <div class="prod-card">
+            <div class="prod-card errorpage">
                 <div class="prod-img-wrap">
                     <img src="./src/image_8.webp" alt="Silk finish foundation">
                     <span class="prod-tag">Best Seller</span>
@@ -1233,7 +1239,7 @@
         <div class="arrivals-scroll">
 
             <!-- 01 -->
-            <div class="arrival-card">
+            <div class="arrival-card errorpage">
                 <img src="./src/image_54.webp" alt="Luxury skincare serum">
 
                 <div class="arrival-info">
@@ -1244,7 +1250,7 @@
 
 
             <!-- 02 -->
-            <div class="arrival-card">
+            <div class="arrival-card errorpage">
                 <img src="./src/image_55.webp" alt="Skincare cream">
 
                 <div class="arrival-info">
@@ -1255,7 +1261,7 @@
 
 
             <!-- 03 -->
-            <div class="arrival-card">
+            <div class="arrival-card errorpage">
                 <img src="./src/image_58.webp" alt="Makeup products">
 
                 <div class="arrival-info">
@@ -1266,7 +1272,7 @@
 
 
             <!-- 04 -->
-            <div class="arrival-card">
+            <div class="arrival-card errorpage">
                 <img src="./src/image_59.webp" alt="Luxury perfume bottle">
 
                 <div class="arrival-info">
@@ -1277,7 +1283,7 @@
 
 
             <!-- 05 -->
-            <div class="arrival-card">
+            <div class="arrival-card errorpage">
                 <img src="./src/image_60.webp" alt="Makeup brushes and cosmetics">
 
                 <div class="arrival-info">
@@ -1288,7 +1294,7 @@
 
 
             <!-- 06 -->
-            <div class="arrival-card">
+            <div class="arrival-card errorpage">
                 <img src="./src/image_56.webp" alt="Natural skincare products">
 
                 <div class="arrival-info">
@@ -1299,7 +1305,7 @@
 
 
             <!-- 07 -->
-            <div class="arrival-card">
+            <div class="arrival-card errorpage">
                 <img src="./src/image_55.webp" alt="Beauty skincare products">
 
                 <div class="arrival-info">
@@ -1389,7 +1395,7 @@
                     <a href="404.html">Skin Products</a>
                     <a href="404.html">Nail Products</a>
                     <a href="404.html">Perfumes</a>
-                    <a href="404.html">hair care Products</a>
+                    <a href="404.html">Hair Care Products</a>
                     <a href="404.html">Accessories</a>
                 </div>
             </div>
@@ -1444,7 +1450,7 @@
         </div>
 
         <div class="footer2">
-            <a href=""><img src="./src/logo.webp" alt="" class="companylogo"></a>
+            <a href="index.html"><img src="./src/logo.webp" alt="" class="companylogo"></a>
             <p>@ Copyright 2026 | Beauty Cosmetics </p>
         </div>
     </footer>
