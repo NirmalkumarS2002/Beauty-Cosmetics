@@ -27,10 +27,41 @@ window.addEventListener("scroll", () => {
 
 //errorpage
 
-let errorpage=document.querySelectorAll(".errorpage")
-errorpage.forEach((err)=>{
-    err.addEventListener("click",()=>{
-        window.location.href="404.html"
+let errorpage = document.querySelectorAll(".errorpage")
+errorpage.forEach((err) => {
+    err.addEventListener("click", () => {
+        window.location.href = "404.html"
     })
-    
+
+})
+
+//foot form
+
+let femail = document.querySelector("#footemail")
+let fbtn = document.querySelector(".footbtn")
+let ferror = document.querySelector(".ferror")
+
+
+fbtn.addEventListener("click", () => {
+
+    let fregex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    let ferr = true
+
+    if (femail.value.trim() == "") {
+        ferror.textContent = "Please Enter Your Email"
+        ferr = false;
+    }
+
+    else if (!fregex.test(femail.value.trim())) {
+        ferror.textContent = "Please Enter Your Email correctly"
+        ferr = false;
+    }
+
+    if (ferr) {
+        ferror.textContent = "Subscribe Successfully!"
+
+        setTimeout(() => {
+            ferror.textContent = ""
+        }, 3000);
+    }
 })

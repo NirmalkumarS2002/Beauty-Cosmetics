@@ -10,12 +10,13 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,-50..200" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@300;400;500;600;700&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
         integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        
+
     <link rel="stylesheet" href="./css/style.css">
 
     <style>
@@ -142,7 +143,7 @@
             color: #fff;
         }
 
-    
+
 
         .shop-grid {
             display: grid;
@@ -236,8 +237,11 @@
 
         .shop-price-row button:hover {
             background: var(--pcolor);
-            color: #fff;
         }
+
+         .shop-price-row button:hover span{
+            color: white;
+         }
 
         .load-more {
             display: flex;
@@ -332,10 +336,10 @@
 
         .deal-img {
             overflow: hidden;
-            background: url("https://images.unsplash.com/photo-1580870069867-74c57ee1bb07?q=80&w=1200&auto=format&fit=crop") center/cover no-repeat;
+            background: url("./src/image_48.webp") center/cover no-repeat;
         }
 
-     
+
 
         .deal-text {
             display: flex;
@@ -553,7 +557,7 @@
 </head>
 
 <body>
-   <div class="header">
+    <div class="header">
 
         <div class="head-sidebar">
 
@@ -663,7 +667,7 @@
             </div>
         </div>
 
-        
+
 
         <div class="head2">
             <a href="index.html"><img src="./src/logo.webp" alt="" class="companylogo"></a>
@@ -692,15 +696,19 @@
         </div>
     </div>
 
-        <section class="ctc-hero">
+    <section class="ctc-hero">
         <div class="ctc-hero-inner">
-            <h5>Get In Touch</h5>
-            <h1>We'd Love To Hear <em>From You</em></h1>
-            <p>Questions about a treatment, an order or just want beauty advice,
-                our team replies within one business day.</p>
+            <h5>Discover Beauty</h5>
+
+            <h1>Your Glow, <em>Your Way</em></h1>
+
+            <p>
+                Shop premium beauty essentials designed to nourish, enhance and
+                celebrate your natural beauty.
+            </p>
 
             <div class="ctc-hero-menus">
-                <a href="index.html">Home</a> / <p>contact</p>
+                <a href="index.html">Home</a> / <p>Shop</p>
             </div>
         </div>
     </section>
@@ -716,14 +724,13 @@
                 <button class="errorpage">Hair Care</button>
                 <button class="errorpage">Fragrance</button>
             </div>
-        
+
         </div>
 
         <div class="shop-grid">
             <div class="shop-card">
                 <div class="shop-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=700&auto=format&fit=crop"
-                        alt="Rose glow serum">
+                    <img src="./src/image_48.webp" alt="Rose glow serum">
                     <span class="shop-badge">Best Seller</span>
                 </div>
                 <div class="shop-info">
@@ -731,15 +738,14 @@
                     <h4>Rose Glow Serum</h4>
                     <div class="shop-price-row">
                         <span>$ 42.00</span>
-                        <button><span class="material-symbols-outlined" style="font-size:18px;">add</span></button>
+                        <button class="errorpage"><span class="material-symbols-outlined" style="font-size:18px;">add</span></button>
                     </div>
                 </div>
             </div>
 
             <div class="shop-card">
                 <div class="shop-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?q=80&w=700&auto=format&fit=crop"
-                        alt="Velvet matte lipstick">
+                    <img src="./src/image_25.webp" alt="Velvet matte lipstick">
                     <span class="shop-badge">New</span>
                 </div>
                 <div class="shop-info">
@@ -747,30 +753,28 @@
                     <h4>Velvet Matte Lipstick</h4>
                     <div class="shop-price-row">
                         <span>$ 26.00</span>
-                        <button><span class="material-symbols-outlined" style="font-size:18px;">add</span></button>
+                        <button class="errorpage"><span class="material-symbols-outlined" style="font-size:18px;">add</span></button>
                     </div>
                 </div>
             </div>
 
             <div class="shop-card">
                 <div class="shop-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?q=80&w=700&auto=format&fit=crop"
-                        alt="Bloom eau de parfum">
+                    <img src="./src/image_26.webp" alt="Bloom eau de parfum">
                 </div>
                 <div class="shop-info">
                     <h5>Fragrance</h5>
                     <h4>Bloom Eau De Parfum</h4>
                     <div class="shop-price-row">
                         <span>$ 68.00</span>
-                        <button><span class="material-symbols-outlined" style="font-size:18px;">add</span></button>
+                        <button class="errorpage"><span class="material-symbols-outlined" style="font-size:18px;">add</span></button>
                     </div>
                 </div>
             </div>
 
             <div class="shop-card">
                 <div class="shop-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=700&auto=format&fit=crop"
-                        alt="Silk finish foundation">
+                    <img src="./src/image_39.webp" alt="Silk finish foundation">
                     <span class="shop-badge">Best Seller</span>
                 </div>
                 <div class="shop-info">
@@ -778,61 +782,57 @@
                     <h4>Silk Finish Foundation</h4>
                     <div class="shop-price-row">
                         <span>$ 38.00</span>
-                        <button><span class="material-symbols-outlined" style="font-size:18px;">add</span></button>
+                        <button class="errorpage"><span class="material-symbols-outlined" style="font-size:18px;">add</span></button>
                     </div>
                 </div>
             </div>
 
             <div class="shop-card">
                 <div class="shop-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1512207736890-6ffed4b0c94f?q=80&w=700&auto=format&fit=crop"
-                        alt="Overnight repair skincare duo">
+                    <img src="./src/image_47.webp" alt="Overnight repair skincare duo">
                 </div>
                 <div class="shop-info">
                     <h5>Skincare</h5>
                     <h4>Overnight Repair Duo</h4>
                     <div class="shop-price-row">
                         <span>$ 46.00</span>
-                        <button><span class="material-symbols-outlined" style="font-size:18px;">add</span></button>
+                        <button class="errorpage"><span class="material-symbols-outlined" style="font-size:18px;">add</span></button>
                     </div>
                 </div>
             </div>
 
             <div class="shop-card">
                 <div class="shop-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1585232004423-fa14b5b7d6b4?q=80&w=700&auto=format&fit=crop"
-                        alt="Nude lip duo">
+                    <img src="./src/image_57.webp" alt="lip duo">
                     <span class="shop-badge">New</span>
                 </div>
                 <div class="shop-info">
                     <h5>Makeup</h5>
-                    <h4>Nude Lip Duo</h4>
+                    <h4>Lip Duo</h4>
                     <div class="shop-price-row">
                         <span>$ 29.00</span>
-                        <button><span class="material-symbols-outlined" style="font-size:18px;">add</span></button>
+                        <button class="errorpage"><span class="material-symbols-outlined" style="font-size:18px;">add</span></button>
                     </div>
                 </div>
             </div>
 
             <div class="shop-card">
                 <div class="shop-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1519415943484-9fa1873496d4?q=80&w=700&auto=format&fit=crop"
-                        alt="Body butter cream jar">
+                    <img src="./src/image_1.webp" alt="Body butter cream jar">
                 </div>
                 <div class="shop-info">
                     <h5>Body Care</h5>
                     <h4>Whipped Body Butter</h4>
                     <div class="shop-price-row">
                         <span>$ 22.00</span>
-                        <button><span class="material-symbols-outlined" style="font-size:18px;">add</span></button>
+                        <button class="errorpage"><span class="material-symbols-outlined" style="font-size:18px;">add</span></button>
                     </div>
                 </div>
             </div>
 
             <div class="shop-card">
                 <div class="shop-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=700&auto=format&fit=crop"
-                        alt="Amber musk perfume bottle">
+                    <img src="./src/image_34.webp" alt="Amber musk perfume bottle">
                     <span class="shop-badge">Limited</span>
                 </div>
                 <div class="shop-info">
@@ -840,7 +840,7 @@
                     <h4>Amber Musk Perfume</h4>
                     <div class="shop-price-row">
                         <span>$ 72.00</span>
-                        <button><span class="material-symbols-outlined" style="font-size:18px;">add</span></button>
+                        <button class="errorpage"><span class="material-symbols-outlined" style="font-size:18px;">add</span></button>
                     </div>
                 </div>
             </div>
@@ -860,32 +860,28 @@
 
         <div class="cat-tab-grid">
             <div class="cat-tab-card errorpage">
-                <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?q=80&w=700&auto=format&fit=crop"
-                    alt="Skincare essentials">
+                <img src="./src/image_8.webp" alt="Skincare essentials">
                 <div class="cat-tab-overlay">
                     <h4>Skincare</h4>
                     <p>24 Products</p>
                 </div>
             </div>
             <div class="cat-tab-card errorpage">
-                <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=700&auto=format&fit=crop"
-                    alt="Makeup collection flatlay">
+                <img src="./src/image_35.webp" alt="Makeup collection flatlay">
                 <div class="cat-tab-overlay">
                     <h4>Makeup</h4>
                     <p>32 Products</p>
                 </div>
             </div>
             <div class="cat-tab-card errorpage">
-                <img src="https://images.unsplash.com/photo-1526947425960-945c6e72858f?q=80&w=700&auto=format&fit=crop"
-                    alt="Fragrance bottles">
+                <img src="./src/image_52.webp" alt="Fragrance bottles">
                 <div class="cat-tab-overlay">
                     <h4>Fragrance</h4>
                     <p>18 Products</p>
                 </div>
             </div>
             <div class="cat-tab-card errorpage">
-                <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=700&auto=format&fit=crop"
-                    alt="Hair care products">
+                <img src="./src/image_55.webp" alt="Hair care products">
                 <div class="cat-tab-overlay">
                     <h4>Hair Care</h4>
                     <p>16 Products</p>
@@ -897,7 +893,7 @@
     <!-- 4. DEAL OF THE DAY BANNER -->
     <section class="deal-banner">
         <div class="deal-img">
-       
+
         </div>
         <div class="deal-text">
             <h5>Deal Of The Day</h5>
@@ -919,46 +915,56 @@
         <p class="sec-sub">What everyone is adding to their cart this week.</p>
 
         <div class="trending-scroll">
+
+            <!-- 01 -->
             <div class="trend-card">
-                <img src="https://images.unsplash.com/photo-1512207736890-6ffed4b0c94f?q=80&w=600&auto=format&fit=crop"
-                    alt="Overnight repair skincare set">
+                <img src="./src/image_71.webp" alt="Luxury facial cleanser">
                 <div class="trend-info">
-                    <h4>Overnight Repair Duo</h4>
-                    <span>$ 46.00</span>
+                    <h4>Pure Glow Cleanser</h4>
+                    <span>$ 32.00</span>
                 </div>
             </div>
+
+
+            <!-- 02 -->
             <div class="trend-card">
-                <img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?q=80&w=600&auto=format&fit=crop"
-                    alt="Glow highlighter product">
+                <img src="./src/image_72.webp" alt="Premium skincare serum bottle">
                 <div class="trend-info">
-                    <h4>Glow Highlighter</h4>
-                    <span>$ 24.00</span>
+                    <h4>Radiance Elixir</h4>
+                    <span>$ 49.00</span>
                 </div>
             </div>
+
+
+            <!-- 03 -->
             <div class="trend-card">
-                <img src="https://images.unsplash.com/photo-1585232004423-fa14b5b7d6b4?q=80&w=600&auto=format&fit=crop"
-                    alt="Nude lip duo set">
+                <img src="./src/image_73.webp" alt="Luxury makeup lipstick">
                 <div class="trend-info">
-                    <h4>Nude Lip Duo</h4>
-                    <span>$ 29.00</span>
+                    <h4>Rose Velvet Lipstick</h4>
+                    <span>$ 26.00</span>
                 </div>
             </div>
+
+
+            <!-- 04 -->
             <div class="trend-card">
-                <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=600&auto=format&fit=crop"
-                    alt="Amber musk perfume">
+                <img src="./src/image_74.webp" alt="Elegant perfume bottle">
                 <div class="trend-info">
-                    <h4>Amber Musk Perfume</h4>
-                    <span>$ 72.00</span>
+                    <h4>Bloom Eau de Parfum</h4>
+                    <span>$ 75.00</span>
                 </div>
             </div>
+
+
+            <!-- 05 -->
             <div class="trend-card">
-                <img src="https://images.unsplash.com/photo-1519415943484-9fa1873496d4?q=80&w=600&auto=format&fit=crop"
-                    alt="Whipped body butter jar">
+                <img src="./src/image_68.webp" alt="Natural body care products">
                 <div class="trend-info">
-                    <h4>Whipped Body Butter</h4>
-                    <span>$ 22.00</span>
+                    <h4>Silky Body Lotion</h4>
+                    <span>$ 28.00</span>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -985,7 +991,7 @@
             <p>Encrypted and safe payments</p>
         </div>
     </section>
-    
+
     <footer class="footer">
         <div class="footer1">
 

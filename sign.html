@@ -46,7 +46,7 @@
             min-height: 100vh;
             padding: 20px;
 
-            background: linear-gradient(125deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.75)), url("https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=1600&auto=format&fit=crop") center/cover no-repeat;
+            background: linear-gradient(125deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.75)), url("./src/e3.webp") center/cover no-repeat;
             backdrop-filter: blur(10px);
         }
 
@@ -275,7 +275,7 @@
         /*right page*/
 
         .right-page {
-            background: linear-gradient(125deg, rgba(209, 116, 116, 0.25), rgba(0, 0, 0, 0.55)), url("https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?q=80&w=1200&auto=format&fit=crop");
+            background: linear-gradient(125deg, rgba(209, 116, 116, 0.25), rgba(0, 0, 0, 0.55)), url("./src/image_48.webp");
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
@@ -306,6 +306,7 @@
             line-height: 1.6;
             font-size: 14px;
             color: #eee;
+            margin: 0 auto;
         }
 
         @media (max-width:1050px) {
@@ -465,8 +466,8 @@
         <div class="left-page">
 
             <div class="log-head">
-                <h1>Login Here</h1>
-                <p>Access your Blush & Bloom account securely.</p>
+                <h1>Join Blush & Bloom</h1>
+                <p>Create your account and begin your journey to beautiful, radiant and confident skin.</p>
             </div>
 
             <div class="form">
@@ -483,7 +484,7 @@
                             <input type="text" placeholder="Enter Your Name" id="log-name">
 
                         </div>
-                              <p class="errormsg"></p>
+                        <p class="errormsg"></p>
                     </div>
 
                     <div class="form-box">
@@ -532,9 +533,11 @@
         <div class="right-page">
             <div class="logo-conatiner">
                 <a href="" class="log-a"><img src="./src/logo.webp" alt="Blush & Bloom logo"></a>
-                <h1>Welcome Back</h1>
-                <p>Login to manage your bookings, track orders, and access your personalized beauty studio
-                    dashboard.</p>
+                <h1>Begin Your Glow Journey</h1>
+                <p>
+                    Create your account and discover skincare, makeup, and beauty essentials
+                    curated just for you.
+                </p>
             </div>
         </div>
 
@@ -542,174 +545,174 @@
 </body>
 
 
-    <script>
-        const nameInput = document.querySelector("#log-name");
-const emailInput = document.querySelector("#log-email");
-const passwordInput = document.querySelector("#log-pass");
-const confirmPassword = document.querySelector("#log-conpass");
+<script>
+    const nameInput = document.querySelector("#log-name");
+    const emailInput = document.querySelector("#log-email");
+    const passwordInput = document.querySelector("#log-pass");
+    const confirmPassword = document.querySelector("#log-conpass");
 
-const loginBtn = document.querySelector(".log-btn");
+    const loginBtn = document.querySelector(".log-btn");
 
-const roleBtns = document.querySelectorAll(".role-btn");
-const eyeIcons = document.querySelectorAll(".passeye");
+    const roleBtns = document.querySelectorAll(".role-btn");
+    const eyeIcons = document.querySelectorAll(".passeye");
 
-const errorMsgs = document.querySelectorAll(".errormsg");
+    const errorMsgs = document.querySelectorAll(".errormsg");
 
-let selectedRole = "Admin";
+    let selectedRole = "Admin";
 
-//========================
-// Role Selection
-//========================
+    //========================
+    // Role Selection
+    //========================
 
-roleBtns.forEach(btn => {
+    roleBtns.forEach(btn => {
 
-    btn.addEventListener("click", () => {
+        btn.addEventListener("click", () => {
 
-        roleBtns.forEach(item => item.classList.remove("active"));
+            roleBtns.forEach(item => item.classList.remove("active"));
 
-        btn.classList.add("active");
+            btn.classList.add("active");
 
-        selectedRole = btn.dataset.role;
+            selectedRole = btn.dataset.role;
+
+        });
 
     });
 
-});
+    //========================
+    // Show / Hide Password
+    //========================
 
-//========================
-// Show / Hide Password
-//========================
+    eyeIcons.forEach((eye, index) => {
 
-eyeIcons.forEach((eye,index)=>{
+        eye.addEventListener("click", () => {
 
-    eye.addEventListener("click",()=>{
+            let input = index === 0 ? passwordInput : confirmPassword;
 
-        let input = index === 0 ? passwordInput : confirmPassword;
+            if (input.type === "password") {
 
-        if(input.type === "password"){
+                input.type = "text";
+                eye.textContent = "visibility";
 
-            input.type = "text";
-            eye.textContent = "visibility";
+            } else {
 
-        }else{
+                input.type = "password";
+                eye.textContent = "visibility_off";
 
-            input.type = "password";
-            eye.textContent = "visibility_off";
+            }
+
+        });
+
+    });
+
+    //========================
+    // Name Validation
+    //========================
+
+    // Only letters and spaces
+
+    nameInput.addEventListener("input", () => {
+
+        nameInput.value = nameInput.value.replace(/[^A-Za-z\s]/g, "");
+
+    });
+
+    //========================
+    // Signup Validation
+    //========================
+
+    loginBtn.addEventListener("click", (e) => {
+
+        e.preventDefault();
+
+        errorMsgs.forEach(msg => msg.textContent = "");
+
+        let valid = true;
+
+        const nameRegex = /^[A-Za-z\s]+$/;
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        // Name
+
+        if (nameInput.value.trim() == "") {
+
+            errorMsgs[0].textContent = "Name is required";
+
+            valid = false;
+
+        }
+        else if (!nameRegex.test(nameInput.value.trim())) {
+
+            errorMsgs[0].textContent = "Only letters are allowed";
+
+            valid = false;
+
+        }
+
+        // Email
+
+        if (emailInput.value.trim() == "") {
+
+            errorMsgs[1].textContent = "Email is required";
+
+            valid = false;
+
+        }
+        else if (!emailRegex.test(emailInput.value.trim())) {
+
+            errorMsgs[1].textContent = "Enter a valid email";
+
+            valid = false;
+
+        }
+
+        // Password
+
+        if (passwordInput.value.trim() == "") {
+
+            errorMsgs[2].textContent = "Password is required";
+
+            valid = false;
+
+        }
+        else if (passwordInput.value.length < 6) {
+
+            errorMsgs[2].textContent = "Minimum 6 characters";
+
+            valid = false;
+
+        }
+
+        // Confirm Password
+
+        if (confirmPassword.value.trim() == "") {
+
+            errorMsgs[3].textContent = "Confirm your password";
+
+            valid = false;
+
+        }
+        else if (passwordInput.value !== confirmPassword.value) {
+
+            errorMsgs[3].textContent = "Passwords do not match";
+
+            valid = false;
+
+        }
+
+        if (valid) {
+
+            popup.classList.add("active");
+
+            okBtn.addEventListener("click", () => {
+
+                window.location.href = "login.html"
+            });
+
 
         }
 
     });
-
-});
-
-//========================
-// Name Validation
-//========================
-
-// Only letters and spaces
-
-nameInput.addEventListener("input",()=>{
-
-    nameInput.value = nameInput.value.replace(/[^A-Za-z\s]/g,"");
-
-});
-
-//========================
-// Signup Validation
-//========================
-
-loginBtn.addEventListener("click",(e)=>{
-
-    e.preventDefault();
-
-    errorMsgs.forEach(msg=>msg.textContent="");
-
-    let valid = true;
-
-    const nameRegex = /^[A-Za-z\s]+$/;
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    // Name
-
-    if(nameInput.value.trim()==""){
-
-        errorMsgs[0].textContent="Name is required";
-
-        valid=false;
-
-    }
-    else if(!nameRegex.test(nameInput.value.trim())){
-
-        errorMsgs[0].textContent="Only letters are allowed";
-
-        valid=false;
-
-    }
-
-    // Email
-
-    if(emailInput.value.trim()==""){
-
-        errorMsgs[1].textContent="Email is required";
-
-        valid=false;
-
-    }
-    else if(!emailRegex.test(emailInput.value.trim())){
-
-        errorMsgs[1].textContent="Enter a valid email";
-
-        valid=false;
-
-    }
-
-    // Password
-
-    if(passwordInput.value.trim()==""){
-
-        errorMsgs[2].textContent="Password is required";
-
-        valid=false;
-
-    }
-    else if(passwordInput.value.length<6){
-
-        errorMsgs[2].textContent="Minimum 6 characters";
-
-        valid=false;
-
-    }
-
-    // Confirm Password
-
-    if(confirmPassword.value.trim()==""){
-
-        errorMsgs[3].textContent="Confirm your password";
-
-        valid=false;
-
-    }
-    else if(passwordInput.value!==confirmPassword.value){
-
-        errorMsgs[3].textContent="Passwords do not match";
-
-        valid=false;
-
-    }
-
-    if(valid){
-
-    popup.classList.add("active");
-
-            okBtn.addEventListener("click", () => {
-
-                window.location.href="login.html"
-            });
-
-
-    }
-
-});
-    </script>
+</script>
 
 </html>

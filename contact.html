@@ -14,7 +14,7 @@
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
         integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css">
@@ -87,7 +87,7 @@
             line-height: 1.7;
         }
 
-      
+
 
         /* ===== 2. CONTACT INFO CARDS ===== */
         .ctc-info {
@@ -309,10 +309,11 @@
             margin-bottom: 6px;
             cursor: pointer;
         }
-         .ctcp{
+
+        .ctcp {
             flex: 1;
             min-height: 45px;
-         }
+        }
 
         .ctc-loc-body p span.material-symbols-outlined {
             font-size: 16px;
@@ -371,7 +372,7 @@
             justify-content: center;
             text-align: center;
             background: linear-gradient(rgba(20, 10, 10, .58), rgba(20, 10, 10, .58)),
-                url("https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1800&auto=format&fit=crop") center/cover no-repeat fixed;
+                url("./src/e7.webp") center/cover no-repeat fixed;
             padding: 8vw;
             color: #fff;
         }
@@ -450,13 +451,7 @@
                 font-size: 36px;
             }
 
-            .ctc-hero-inner h1 {
-                font-size: 42px;
-            }
 
-            .ctc-social-inner h2 {
-                font-size: 34px;
-            }
         }
 
         @media (max-width:640px) {
@@ -478,13 +473,15 @@
                 padding: 42px 28px;
             }
 
-            .ctc-hero-inner h1 {
-                font-size: 32px;
-            }
-
             .ctc-faq-item {
                 padding: 22px 22px;
             }
+        }
+
+        .cerror{
+            font-size: 13px;
+            color: var(--pcolor-dark) !important;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -674,8 +671,7 @@
 
         <div class="ctc-form-wrap">
             <div class="ctc-form-img">
-                <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=900&auto=format&fit=crop"
-                    alt="Beauty consultant at studio desk">
+                <img src="./src/e2.webp" alt="Beauty consultant at studio desk">
             </div>
             <div class="ctc-form-body">
                 <h3>Tell Us <em>What You Need</em></h3>
@@ -685,84 +681,156 @@
                 <div class="ctc-form-row">
                     <div class="ctc-form-field">
                         <label>Full Name</label>
-                        <input type="text" placeholder="Your name">
+                        <input type="text" placeholder="Your name" id="cname">
+                        <p class="cerror"></p>
                     </div>
+
                     <div class="ctc-form-field">
                         <label>Phone Number</label>
-                        <input type="text" placeholder="+91 00000 00000">
+                        <input type="text" placeholder="+91 00000 00000" id="cnum">
+                        <p class="cerror"></p>
                     </div>
                 </div>
 
                 <div class="ctc-form-row">
                     <div class="ctc-form-field full">
                         <label>Email Address</label>
-                        <input type="email" placeholder="you@example.com">
+                        <input type="email" placeholder="you@example.com" id="cmail">
+                        <p class="cerror"></p>
                     </div>
                 </div>
 
                 <div class="ctc-form-row">
                     <div class="ctc-form-field full">
                         <label>Subject</label>
-                        <input type="text" placeholder="Subject">
+                        <input type="text" placeholder="Subject" id="csub">
+                        <p class="cerror"></p>
                     </div>
                 </div>
 
                 <div class="ctc-form-row">
                     <div class="ctc-form-field full">
                         <label>Message</label>
-                        <textarea rows="4" placeholder="Write your message here"></textarea>
+                        <textarea rows="3" placeholder="Write your message here" id="cmsg"></textarea>
+                       <p class="cerror"></p>
                     </div>
                 </div>
 
                 <button class="ctc-form-btn">Send Message</button>
+                <p class="cerror"></p>
             </div>
         </div>
     </section>
 
     <!-- 4. STUDIO LOCATIONS -->
+    <!-- 4. STUDIO LOCATIONS -->
     <section class="ctc-locations">
+
         <div class="eyebrow">Find Us</div>
-        <h2 class="sec-title">Our <span>Studio Locations</span></h2>
-        <p class="sec-sub">Walk in for a consultation or a treatment at any of our
-            studios across the city.</p>
+
+        <h2 class="sec-title">
+            Our <span>Beauty Studios</span>
+        </h2>
+
+        <p class="sec-sub">
+            Visit our beauty studios for personalized consultations,
+            skincare treatments, makeup services, and complete self-care.
+        </p>
+
 
         <div class="ctc-loc-grid">
+
+            <!-- Anna Nagar -->
             <div class="ctc-loc-card">
+
                 <div class="ctc-loc-img">
-                    <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?q=80&w=800&auto=format&fit=crop"
-                        alt="Studio interior Anna Nagar">
+                    <img src="./src/image_61.webp">
                 </div>
+
                 <div class="ctc-loc-body">
-                    <h4>Anna Nagar Studio</h4>
-                    <p class="errorpage ctcp"><span class="material-symbols-outlined">location_on</span>2nd Avenue, Anna Nagar, Chennai</p>
-                    <p class="errorpage"><span class="material-symbols-outlined">call</span>+91 98765 11111</p>
+
+                    <h4>Anna Nagar Beauty Studio</h4>
+
+                    <p class="errorpage ctcp">
+                        <span class="material-symbols-outlined">
+                            location_on
+                        </span>
+                        2nd Avenue, Anna Nagar, Chennai
+                    </p>
+
+                    <p class="errorpage">
+                        <span class="material-symbols-outlined">
+                            call
+                        </span>
+                        +91 98765 11111
+                    </p>
+
                 </div>
+
             </div>
 
+
+            <!-- Adyar -->
             <div class="ctc-loc-card">
+
                 <div class="ctc-loc-img">
-                    <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=800&auto=format&fit=crop"
-                        alt="Studio interior Adyar">
+                    <img src="./src/image_62.webp" alt="Elegant beauty treatment studio in Adyar">
                 </div>
+
                 <div class="ctc-loc-body">
-                    <h4>Adyar Studio</h4>
-                    <p class="errorpage ctcp"><span class="material-symbols-outlined">location_on</span>Lattice Bridge Road, Adyar, Chennai</p>
-                    <p class="errorpage"><span class="material-symbols-outlined">call</span>+91 98765 22222</p>
+
+                    <h4>Adyar Beauty Studio</h4>
+
+                    <p class="errorpage ctcp">
+                        <span class="material-symbols-outlined">
+                            location_on
+                        </span>
+                        Lattice Bridge Road, Adyar, Chennai
+                    </p>
+
+                    <p class="errorpage">
+                        <span class="material-symbols-outlined">
+                            call
+                        </span>
+                        +91 98765 22222
+                    </p>
+
                 </div>
+
             </div>
 
+
+            <!-- Velachery -->
             <div class="ctc-loc-card">
+
                 <div class="ctc-loc-img">
-                    <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=80&w=800&auto=format&fit=crop"
-                        alt="Studio interior Velachery">
+                    <img src="./src/image_63.webp" alt="Modern cosmetics and beauty studio in Velachery">
                 </div>
+
                 <div class="ctc-loc-body">
-                    <h4>Velachery Studio</h4>
-                    <p class="errorpage ctcp"><span class="material-symbols-outlined">location_on</span>100 Feet Road, Velachery, Chennai</p>
-                    <p class="errorpage"><span class="material-symbols-outlined">call</span>+91 98765 33333</p>
+
+                    <h4>Velachery Beauty Studio</h4>
+
+                    <p class="errorpage ctcp">
+                        <span class="material-symbols-outlined">
+                            location_on
+                        </span>
+                        100 Feet Road, Velachery, Chennai
+                    </p>
+
+                    <p class="errorpage">
+                        <span class="material-symbols-outlined">
+                            call
+                        </span>
+                        +91 98765 33333
+                    </p>
+
                 </div>
+
             </div>
+
         </div>
+
     </section>
 
     <!-- 5. FAQ -->
@@ -893,6 +961,7 @@
     </footer>
 
     <script src="./js/script.js"></script>
+    <script src="./js/contact.js"></script>
 
 </body>
 
